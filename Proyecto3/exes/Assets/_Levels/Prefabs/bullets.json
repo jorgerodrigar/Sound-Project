@@ -1,0 +1,282 @@
+{
+  "Prefabs": [
+    {
+      "id": {
+        "name": "base_bullet",
+        "type": "base_bullet",
+        "group": "bBullets"
+      },
+      "Components": {
+        "bullet_phys": {
+          "id": {
+            "type": "PhysicsComponent"
+          },
+          "noGravity": true,
+          "mass": 0.01,
+          "shape": {
+            "type": "SPHERE",
+            "r": 0.3
+          }
+        },
+        "bullet_rend": {
+          "id": {
+            "type": "RenderComponent"
+          },
+          "scale": {
+            "x": 0.3,
+            "y": 0.3,
+            "z": 0.3
+          },
+          "material": "Bullet",
+          "shape": {
+            "entity_name": "base_bullet",
+            "type": "MESH",
+            "mesh": "uv_sphere.mesh"
+          }
+        },
+        "bullet_hit": {
+          "id": {
+            "type": "BulletHit"
+          },
+          "time": 8
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "disperse_bullet",
+        "type": "disperse_bullet",
+        "group": "dBullets"
+      },
+      "Components": {
+        "bullet_phys": {
+          "id": {
+            "type": "PhysicsComponent"
+          },
+          "noGravity": true,
+          "mass": 0.01,
+          "shape": {
+            "type": "SPHERE",
+            "r": 0.18
+          }
+        },
+        "bullet_rend": {
+          "id": {
+            "type": "RenderComponent"
+          },
+          "scale": {
+            "x": 0.18,
+            "y": 0.18,
+            "z": 0.18
+          },
+          "material": "Bullet",
+          "shape": {
+            "entity_name": "base_bullet",
+            "type": "MESH",
+            "mesh": "uv_sphere.mesh"
+          }
+        },
+        "bullet_hit": {
+          "id": {
+            "type": "BulletHit"
+          },
+          "time": 8
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "power_bullet",
+        "type": "power_bullet",
+        "group": "pBullets"
+      },
+      "Components": {
+        "bullet_phys": {
+          "id": {
+            "type": "PhysicsComponent"
+          },
+          "noGravity": true,
+          "mass": 0.01,
+          "shape": {
+            "type": "SPHERE",
+            "r":0.5
+          }
+        },
+        "bullet_rend": {
+          "id": {
+            "type": "RenderComponent"
+          },
+          "scale": {
+            "x": 0.8,
+            "y": 0.8,
+            "z": 0.8
+          },
+          "material": "SpecialBullet",
+          "shape": {
+            "entity_name": "power_bullet",
+            "type": "MESH",
+            "mesh": "uv_sphere.mesh"
+          }
+        },
+        "bullet_hit": {
+          "id": {
+            "type": "BulletHit"
+          },
+          "time": 8
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "e_bomb",
+        "type": "e_bomb",
+        "group": "enemies"
+      },
+      "Components": {
+        "bullet_phys": {
+          "id": {
+            "type": "PhysicsComponent"
+          },
+          "noGravity": false,
+          "mass": 0.04,
+          "shape": {
+            "type": "SPHERE",
+            "r": 0.4
+          }
+        },
+        "bullet_rend": {
+          "id": {
+            "type": "RenderComponent"
+          },
+          "scale": {
+            "x": 0.8,
+            "y": 0.8,
+            "z": 0.8
+          },
+          "material": "Bomb",
+          "shape": {
+            "entity_name": "e_bomb",
+            "type": "MESH",
+            "mesh": "uv_sphere.mesh"
+          }
+        },
+        "bullet_hit": {
+          "id": {
+            "type": "BulletHit"
+          },
+          "time": 8
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "e_bullet",
+        "type": "e_bullet",
+        "group": "enemies"
+      },
+      "Components": {
+        "bullet_phys": {
+          "id": {
+            "type": "PhysicsComponent"
+          },
+          "noGravity": true,
+          "mass": 0.04,
+          "shape": {
+            "type": "SPHERE",
+            "r": 1.3
+          }
+        },
+        "bullet_rend": {
+          "id": {
+            "type": "RenderComponent"
+          },
+          "scale": {
+            "x": 1.3,
+            "y": 1.3,
+            "z": 1.3
+          },
+          "material": "EnemyBullet",
+          "shape": {
+            "entity_name": "e_bullet",
+            "type": "MESH",
+            "mesh": "uv_sphere.mesh"
+          }
+        },
+        "heavy_bullet_hit": {
+          "id": {
+            "type": "HeavyBulletHit"
+          },
+          "time": 8
+        },
+        "bullet_hittable": {
+          "id": {
+            "type": "BulletHittable",
+            "group": "enemy_comps"
+          },
+          "hp": 30,
+          "points": 0,
+          "enemy": false
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "e_rocket",
+        "type": "e_rocket",
+        "group": "enemies"
+      },
+      "Components": {
+        "bullet_phys": {
+          "id": {
+            "type": "PhysicsComponent"
+          },
+          "noGravity": true,
+          "mass": 0.04,
+          "shape": {
+            "type": "SPHERE",
+            "r": 0.7
+          }
+        },
+        "bullet_rend": {
+          "id": {
+            "type": "RenderComponent"
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "material": "EnemyRocket",
+          "shape": {
+            "entity_name": "e_rocket",
+            "type": "MESH",
+            "mesh": "uv_sphere.mesh"
+          }
+        },
+        "heavy_bullet_hit": {
+          "id": {
+            "type": "HeavyBulletHit"
+          },
+          "time": 10
+        },
+        "bullet_hittable": {
+          "id": {
+            "type": "BulletHittable",
+            "group": "enemy_comps"
+          },
+          "hp": 20,
+          "points": 0,
+          "enemy": false
+        },
+        "FollowTargetComponent": {
+          "id": {
+            "type": "FollowTargetComponent",
+            "group": "enemy_comps"
+          },
+          "HorizontalSpeed": 15,
+          "Target": "player"
+        }
+      }
+    }
+  ]
+}

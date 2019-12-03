@@ -1,0 +1,159 @@
+{
+  "stateID_": "LavaScene",
+  "mapFile": "_MAIN_LEVEL_map.txt",
+  "physRequired": true,
+  "Player": {
+    "id": {
+      "name": "player",
+      "type": "pref_playerController"
+    }
+  },
+  "Manager":{
+    "id": {
+      "type": "pref_gm_go"
+    },
+    "Components":{
+        "LevelMusic": {
+          "routeName": "lavaMusic.ogg"
+        }
+    }
+  },
+  "GameObjects": [
+    {
+      "id": {
+        "type": "pref_spawner"
+      },
+      "pos": {
+        "x": -30.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": {
+        "type": "sniper_spawner"
+      }
+    },
+    {
+      "id": {
+        "type": "stomper_spawner"
+      }
+    },
+    {
+      "id": {
+        "type": "bombardier_spawner"
+      },
+      "pos": {
+        "x": -40.0,
+        "y": 30.0,
+        "z": 0.0
+      }
+    },
+
+    {
+      "id": {
+        "type": "pref_Enemyspawner"
+      },
+      "pos": {
+        "x": 80.0,
+        "y": -1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": {
+        "type": "pref_Enemyspawner"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 80.0
+      },
+      "ori": {
+        "w": 0.5,
+        "x": 0.5,
+        "y": -0.5,
+        "z": 0.5
+      }
+    },
+    {
+      "id": {
+        "type": "pref_Enemyspawner"
+      },
+      "pos": {
+        "x": -80.0,
+        "y": -1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": {
+        "type": "pref_Enemyspawner"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": -80.0
+      },
+      "ori": {
+        "w": 0.5,
+        "x": 0.5,
+        "y": -0.5,
+        "z": 0.5
+      }
+    },
+
+    {
+      "id": {
+        "type": "ambient_light"
+      }
+    },
+
+    {
+      "id": {
+        "type": "skybox"
+      }
+    },
+    {
+      "id": {
+        "type": "PlaneLava"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": -6.0,
+        "z": 0.0
+      },
+      "Components": {
+        "triggeraxis": {
+          "id": {
+            "type": "BoxTriggerComponent",
+            "group": "trigger_comps"
+          },
+          "x": -100,
+          "y": -6.0,
+          "z": -100,
+          "w": 200,
+          "h": -3000,
+          "d": 200,
+          "target": "player"
+        },
+        "TickDmg":{
+          "id": {
+            "type": "DamageTickComponent",
+            "group": "trigger_comps"
+          },
+          "timer": 0.5,
+          "dmg": 7.5,
+          "enterId":12,
+          "exitId": 13,
+          "target": "player"
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "leaderBoard"
+      }
+    }
+  ]
+}

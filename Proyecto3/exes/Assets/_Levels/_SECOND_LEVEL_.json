@@ -1,0 +1,222 @@
+{
+  "stateID_": "WaterScene",
+  "mapFile": "_SECOND_LEVEL_map.txt",
+  "physRequired": true,
+  "Player": {
+    "id": {
+      "name": "player",
+      "type": "pref_playerController"
+    },
+    "Components": {
+      "lavaPostProcessing": {
+        "id": {
+          "type": "BasicPostProcessingComponent",
+          "group": "player_comps"
+        },
+        "CompositorName": "Water",
+        "EnabledOnStart": false,
+        "Active_Message": 12,
+        "Inactive_Message": 13
+      },
+      "ChangePlayerGravityComponent":{
+        "Custom_Gravity": {"x": 0.0, "y": -2.5, "z": 0.0 }
+      }
+    }
+  },
+  "Manager": {
+    "id": {
+      "type": "pref_gm_go"
+    },
+    "Components":{
+        "LevelMusic": {
+          "routeName": "iceMusic.ogg"
+        }
+    }
+  },
+  "GameObjects": [
+    {
+      "id": {
+        "type": "pref_spawner"
+      },
+      "pos": {
+        "x": -30.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": {
+        "type": "sniper_spawner"
+      }
+    },
+    {
+      "id": {
+        "type": "stomper_spawner"
+      }
+    },
+    {
+      "id": {
+        "type": "bombardier_spawner"
+      },
+      "pos": {
+        "x": -40.0,
+        "y": 30.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": {
+        "type": "pref_Enemyspawner"
+      },
+      "pos": {
+        "x": 110.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "Components": {
+        "att_light": {
+          "diffColor": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 1.0
+          }
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "pref_Enemyspawner"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 90.0
+      },
+      "ori": {
+        "w": 0.5,
+        "x": 0.5,
+        "y": -0.5,
+        "z": 0.5
+      },
+      "Components": {
+        "att_light": {
+          "diffColor": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 1.0
+          }
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "pref_Enemyspawner"
+      },
+      "pos": {
+        "x": -110.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "Components": {
+        "att_light": {
+          "diffColor": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 1.0
+          }
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "pref_Enemyspawner"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": -90.0
+      },
+      "ori": {
+        "w": 0.5,
+        "x": 0.5,
+        "y": -0.5,
+        "z": 0.5
+      },
+      "Components": {
+        "att_light": {
+          "diffColor": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 1.0
+          }
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "ambient_light"
+      },
+      "Components": {
+        "globallight": {
+          "r": 0.2,
+          "g": 0.6,
+          "b": 0.8
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "skybox"
+      },
+      "Components": {
+        "skybox": {
+          "skybox": "SkyBox3"
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "PlaneLava"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": -6.0,
+        "z": 0.0
+      },
+      "Components": {
+        "triggeraxis": {
+          "id": {
+            "type": "BoxTriggerComponent",
+            "group": "trigger_comps"
+          },
+          "x": -100,
+          "y": -6.0,
+          "z": -100,
+          "w": 200,
+          "h": -3000,
+          "d": 200,
+          "target": "player"
+        },
+        "TickDmg": {
+          "id": {
+            "type": "DamageTickComponent",
+            "group": "trigger_comps"
+          },
+          "timer": 2,
+          "dmg": 10,
+          "enterId": 12,
+          "exitId": 13,
+          "target": "player"
+        },
+        "basic_ren": {
+          "material": "Water"
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "leaderBoard"
+      }
+    }
+  ]
+}

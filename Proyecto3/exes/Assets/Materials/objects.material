@@ -1,0 +1,604 @@
+material SimpleTile
+{
+technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+			texture_unit
+			{
+				texture wood.jpg
+				tex_address_mode wrap
+				scale 0.4 0.25
+			}
+		}
+	}
+}
+
+material WoodTile
+{
+technique
+	{
+		pass
+		{
+			ambient 0.1 0.1 0.1
+
+			texture_unit
+			{
+				colour_op add
+				texture stone.jpg
+				tex_address_mode wrap
+				scale 0.4 0.25
+			}
+		}
+	}
+}
+
+material MetalTile
+{
+technique
+	{
+		pass
+		{
+			ambient 0.0 0.0 0.0
+
+			texture_unit
+			{
+				colour_op add
+				texture metal.png
+				tex_address_mode wrap
+			}
+		}
+	}
+}
+
+material RockTile
+{
+technique
+	{
+		pass
+		{			
+			ambient 0.0 0.0 0.0
+			specular 0.0 0.0 0.0
+			diffuse 0.0 0.0 0.0
+
+			cull_hardware none
+
+			texture_unit
+			{
+				colour_op add
+				texture lavaRock.jpg
+				tex_address_mode wrap
+			}
+		}
+	}
+}
+
+material IceTile
+{
+technique
+	{
+		pass
+		{
+			ambient 0.2 0.2 0.2
+			cull_hardware none
+
+			texture_unit
+			{
+				colour_op add
+				texture hielo.jpg
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material HolyTile
+{
+technique
+	{
+		pass
+		{
+			ambient 0.0 0.0 0.0
+
+			texture_unit
+			{
+				colour_op add
+				texture gold.jpg
+				tex_address_mode wrap
+			}
+		}
+	}
+}
+
+
+
+material BigHolyTile
+{
+technique
+	{
+		pass
+		{
+			ambient 0.0 0.0 0.0
+
+			texture_unit
+			{
+				colour_op add
+				texture cloud.jpg
+				tex_address_mode wrap
+			}
+		}
+	}
+}
+
+material FallingTile
+{
+technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+			texture_unit
+			{
+				texture brokenWood.jpg
+				tex_address_mode wrap
+			}
+		}
+	}
+}
+
+material Spoon
+{
+technique
+	{
+		pass
+		{
+			ambient 0.0 0.0 0.0
+			specular 0.0 0.0 0.0
+			diffuse 0.0 0.0 0.0
+
+			texture_unit
+			{
+				colour_op add
+				texture spoon.jpg
+				tex_address_mode wrap
+			}
+		}
+	}
+}
+
+material MetalSpoon
+{
+technique
+	{
+		pass
+		{
+			ambient 0.15 0.15 0.15
+			specular 0.0 0.0 0.0
+			diffuse 0.0 0.0 0.0
+
+			texture_unit
+			{
+				colour_op add
+				texture metalLow.png
+				tex_address_mode wrap
+			}
+		}
+	}
+}
+
+material GoldenSpoon
+{
+technique
+	{
+		pass
+		{
+			ambient 0.05 0.05 0.05
+			specular 0.0 0.0 0.0
+			diffuse 0.05 0.05 0.05
+
+			texture_unit
+			{
+				colour_op add
+				texture goldenSpoon.jpg
+				tex_address_mode wrap
+			}
+		}
+	}
+}
+
+material Bullet
+{
+technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+			texture_unit
+			{
+				texture orange.jpg
+				tex_address_mode wrap
+			}
+		}
+	}
+}
+
+material SpecialBullet
+{
+technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+			texture_unit
+			{
+				texture melon.jpg
+				tex_address_mode wrap
+			}
+		}
+	}
+}
+
+material Bomb
+{
+technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+			texture_unit
+			{
+				texture lemon.jpg
+				tex_address_mode wrap
+			}
+		}
+	}
+}
+
+material EnemyBullet
+{
+technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+			texture_unit
+			{
+				texture pomegranate.jpg
+				tex_address_mode wrap
+			}
+		}
+	}
+}
+
+material EnemyRocket
+{
+technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+			texture_unit
+			{
+				texture apple.jpg
+				tex_address_mode wrap
+			}
+		}
+	}
+}
+
+material SkyBox2
+{
+    technique
+    {
+        pass
+        {
+            depth_write off
+
+            texture_unit
+            {
+                cubic_texture hell.png separateUV
+                tex_address_mode clamp
+            }
+        }
+    }
+}
+
+material SkyBox3
+{
+    technique
+    {
+        pass
+        {
+            depth_write off
+
+            texture_unit
+            {
+                cubic_texture stormy.jpg separateUV
+                tex_address_mode clamp
+            }
+        }
+    }
+}
+
+material SkyBox4
+{
+    technique
+    {
+        pass
+        {
+            depth_write off
+
+            texture_unit
+            {
+                cubic_texture cloud.png separateUV
+                tex_address_mode clamp
+            }
+        }
+    }
+}
+
+material Lava{
+    technique{
+        pass{
+            diffuse 0.0 0.0 0.0
+            ambient 0.0 0.0 0.0
+            specular 0.0 0.0 0.0 0
+			cull_hardware none
+            texture_unit{
+                texture lava.png
+                scroll_anim 0.1 0.0
+				scale 0.05 0.05
+                colour_op add
+            }
+        }
+    }
+    technique {
+        pass{
+            diffuse 0.5 0.5 0.5
+        }
+    }
+}
+
+material Water{
+    technique{
+        pass{
+            diffuse 0.0 0.0 0.0
+            ambient 0.0 0.8 1.0
+            specular 0.0 0.0 0.0 0
+			cull_hardware none
+            texture_unit{
+                texture water.jpg
+                scroll_anim 0.1 0.0
+				scale 0.05 0.05
+                colour_op modulate
+            }
+        }
+    }
+    technique {
+        pass{
+            diffuse 0.5 0.5 0.5
+        }
+    }
+}
+
+material stone {
+    technique
+	{
+		pass
+		{
+			cull_hardware none
+			texture_unit
+			{
+				texture stone.jpg
+			}
+		}
+	}
+}
+
+material portal{
+    technique{
+        pass{
+			scene_blend alpha_blend
+            diffuse 0.0 0.0 0.0 0.5
+            ambient 0.0 0.0 0.0 0.5
+			cull_hardware none
+            texture_unit{
+                texture portal.png
+				rotate_anim -0.25
+                colour_op add
+				tex_address_mode clamp
+            }
+        }
+    }
+    technique {
+        pass{
+            diffuse 0.5 0.5 0.5
+        }
+    }
+}
+
+material aGSpoon {
+    technique
+	{
+		pass
+		{
+		ambient 2.2 2.2 2.2
+		diffuse 0.2 0.4 0.4
+		scene_blend alpha_blend
+			texture_unit
+			{
+				texture aGSpoon.png
+			}
+		}
+	}
+}
+
+material dGSpoon {
+    technique
+	{
+		pass
+		{
+		ambient 2.2 2.2 2.2
+		diffuse 0.2 0.4 0.4
+		scene_blend alpha_blend
+			texture_unit
+			{
+				texture dGSpoon.png
+			}
+		}
+	}
+}
+
+material fGSpoon {
+    technique
+	{
+		pass
+		{
+		ambient 2.2 2.2 2.2
+		diffuse 0.2 0.4 0.4
+		scene_blend alpha_blend
+			texture_unit
+			{
+				texture fGSpoon.png
+			}
+		}
+	}
+}
+
+material aMSpoon {
+    technique
+	{
+		pass
+		{
+		ambient 2.2 2.2 2.2
+		diffuse 0.2 0.4 0.4
+		scene_blend alpha_blend
+			texture_unit
+			{
+				texture aMSpoon.png
+			}
+		}
+	}
+}
+
+material fMSpoon {
+    technique
+	{
+		pass
+		{
+		ambient 2.2 2.2 2.2
+		diffuse 0.2 0.4 0.4
+		scene_blend alpha_blend
+			texture_unit
+			{
+				texture fMSpoon.png
+			}
+		}
+	}
+}
+
+material dMSpoon {
+    technique
+	{
+		pass
+		{
+		ambient 2.2 2.2 2.2
+		diffuse 0.2 0.4 0.4
+		scene_blend alpha_blend
+			texture_unit
+			{
+				texture dMSpoon.png
+			}
+		}
+	}
+}
+
+material GSpoon {
+    technique
+	{
+		pass
+		{
+		ambient 2.2 2.2 2.2
+		diffuse 0.2 0.4 0.4
+		scene_blend alpha_blend
+			texture_unit
+			{
+				texture GSpoon.png
+			}
+		}
+	}
+}
+
+material dWSpoon {
+    technique
+	{
+		pass
+		{
+		ambient 2.2 2.2 2.2
+		diffuse 0.2 0.4 0.4
+		scene_blend alpha_blend
+			texture_unit
+			{
+				texture dWSpoon.png
+			}
+		}
+	}
+}
+
+material fWSpoon {
+    technique
+	{
+		pass
+		{
+		ambient 2.2 2.2 2.2
+		diffuse 0.2 0.4 0.4
+		scene_blend alpha_blend
+			texture_unit
+			{
+				texture fWSpoon.png
+			}
+		}
+	}
+}
+
+material Health {
+    technique
+	{
+		pass
+		{
+		ambient 2.2 2.2 2.2
+		diffuse 0.2 0.4 0.4
+		scene_blend alpha_blend
+			texture_unit
+			{
+				texture Health.png
+			}
+		}
+	}
+}
+
+material Speed {
+    technique
+	{
+		pass
+		{
+		ambient 2.2 2.2 2.2
+		diffuse 0.2 0.4 0.4
+		scene_blend alpha_blend
+			texture_unit
+			{
+				texture Speed.png
+			}
+		}
+	}
+}
+
+

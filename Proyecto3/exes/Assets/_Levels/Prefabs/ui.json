@@ -1,0 +1,133 @@
+{
+    "Prefabs": [
+        {
+            "id": {
+                "name": "cursor",
+                "type": "cursor_ui",
+                "group": "ui"
+            },
+            "Components": {
+                "cursor": {
+                    "id": {
+                        "type": "CursorComponent",
+                        "group": "ui_comps"
+                    },
+                    "image": "POINTER.cur"
+                }
+            }
+        },
+        {
+            "id": {
+                "name": "button",
+                "type": "button_ui",
+                "group": "ui"
+            },
+            "Components": {
+                "button": {
+                    "id": {
+                        "type": "ButtonComponent",
+                        "group": "ui_comps"
+                    },
+                    "X": 0.35,
+                    "Y": 0.6,
+                    "W": 0.3,
+                    "H": 0.1,
+                    "msgType": 0,
+                    "panelName": "MENU_PanelContainer",
+                    "materialName": "startButtonMaterial",
+                    "name": "start_button"
+                },
+                "ButtonSizeChangeComponent":{
+                    "id": {
+                        "type": "ButtonSizeChangeComponent",
+                        "group": "ui_comps"
+                    },
+                    "Multiplier": 1.2,
+                    "soundEmitter": "sound"
+                },
+                "sound": {
+                  "id": {
+                    "type": "SoundEmitterComponent",
+                    "group": "sound_comp"
+                  },
+                  "routeName": "hoverButton.ogg",
+                  "loop": false,
+                  "startPaused":true,
+                  "3D": false,
+                  "volume": 1.0
+                }
+            }
+        },
+        {
+            "id": {
+                "name": "basic_postprocessing",
+                "type": "basic_postprocessing",
+                "group": "ui"
+            },
+            "Components": {
+                "BasicPostProcessingComponent": {
+                    "id": {
+                        "type": "BasicPostProcessingComponent",
+                        "group": "postProcessing_comps"
+                    },
+                    "CompositorName": "Luminance",
+                    "EnabledOnStart": true
+                }
+            }
+        },
+        {
+            "id": {
+                "name": "showLeaderBoard",
+                "type": "showLeaderBoard",
+                "group": "ui"
+            },
+            "Components": {
+                "ShowLeaderBoardComponent": {
+                    "id": {
+                        "type": "ShowLeaderBoardComponent",
+                        "group": "ui_comps"
+                    },
+                    "panelName": "LEADER_BOARD_PanelContainer",
+                    "offset_X": 0.33,
+                    "offset_Y": 0.14,
+                    "top_distance": 0.3,
+                    "btw_distance": 350,
+                    "charHeight": 0.08,
+                    "color_top": {
+                        "r": 1.0,
+                        "g": 1.0,
+                        "b": 1.0
+                    },
+                    "color_bot": {
+                        "r": 0.88,
+                        "g": 0.18,
+                        "b": 0.04
+                    }
+                }
+            }
+        },
+        {
+            "id": {
+                "name": "Hoverbutton",
+                "type": "HoverButton_ui",
+                "group": "ui"
+            },
+            "Components": {
+                "button": {
+                    "id": {
+                        "type": "HoverButton",
+                        "group": "ui_comps"
+                    },
+                    "X": 0.0,
+                    "Y": 0.83,
+                    "W": 0.15,
+                    "H": 0.17,
+                    "panelName": "MENU_FRAME_PanelContainer",
+                    "materialName": "FullControlsMaterial",
+                    "imgMat": "ButtonMaterial",
+                    "name": "hover_button"
+                }
+            }
+        }
+    ]
+}

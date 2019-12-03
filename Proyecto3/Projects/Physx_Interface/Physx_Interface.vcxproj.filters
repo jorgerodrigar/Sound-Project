@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{53aa93a1-52ea-4f8a-838c-6094347a2254}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivs de origen">
+      <UniqueIdentifier>{a93c0fdf-9dc7-4329-bbb5-9b3415c3b172}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Physx_Interface\PhysicsSystemManager.cpp">
+      <Filter>Archivs de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Physx_Interface\EventReporter.cpp">
+      <Filter>Archivs de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Physx_Interface\ControllerReporter.cpp">
+      <Filter>Archivs de origen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\Physx_Interface\EventReporter.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Physx_Interface\PhysicsSystemManager.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Physx_Interface\PhyscsFowarder.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Physx_Interface\ControllerReporter.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

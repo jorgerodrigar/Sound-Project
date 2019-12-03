@@ -1,0 +1,83 @@
+{
+    "Prefabs": [
+        {
+            "id": {
+                "name": "pref_ground",
+                "type": "pref_ground",
+                "group": "test_prefabs"
+            },
+            "Components": {
+                "ground_phys": {
+                    "id": {
+                        "type": "PhysicsComponent",
+                        "group": "test_comps"
+                    },
+                    "dynamic": false,
+                    "shape": {
+                        "type": "BOX",
+                        "scale": {
+                            "x": 20.0,
+                            "y": 1.0,
+                            "z": 20.0
+                        }
+                    }
+                },
+                "ground_rend": {
+                    "id": {
+                        "type": "RenderComponent",
+                        "group": "test_comps"
+                    },
+                    "scale": {
+                        "x": 30.0,
+                        "y": 30.0,
+                        "z": 30.0
+                    },
+                    "material": "Ocean",
+                    "shape": {
+                        "entity_name": "pref_ground",
+                        "type": "MESH",
+                        "mesh": "Ocean.mesh"
+                    }
+                }
+            }
+        },
+        {
+            "id": {
+                "name": "pref_cube",
+                "type": "pref_cube",
+                "group": "test_prefabs"
+            },
+            "Components": {
+                "cube_phys": {
+                    "id": {
+                        "type": "PhysicsComponent"
+                    },
+                    "shape": {
+                        "type": "BOX",
+                        "scale": {
+                            "x": 2.5,
+                            "y": 2.5,
+                            "z": 2.5
+                        }
+                    }
+                },
+                "cube_rend": {
+                    "id": {
+                        "type": "RenderComponent"
+                    },
+                    "scale": {
+                        "x": 2.5,
+                        "y": 2.5,
+                        "z": 2.5
+                    },
+                    "material": "DebugMaterial",
+                    "shape": {
+                        "entity_name": "pref_cube",
+                        "type": "MESH",
+                        "mesh": "cube.mesh"
+                    }
+                }
+            }
+        }
+    ]
+}

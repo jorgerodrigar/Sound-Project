@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{b2098506-ba48-42f1-8364-baaa5641860e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{70ed0186-9e11-4a78-9204-36b46d127933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Messages">
+      <UniqueIdentifier>{6470dfbd-d5d8-4fb9-9c43-cb9ba0398a27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{f3f0a111-f6ea-47fb-9895-b0d32fd84b43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Components">
+      <UniqueIdentifier>{bffef9af-bf86-4c59-a517-c78979307891}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_GameObject">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="_GameStates">
+      <UniqueIdentifier>{c74e18b2-e8bc-4e7b-8b0a-d1a3f96d30af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemy">
+      <UniqueIdentifier>{34dda379-aa0a-44b2-8383-5a76477e43f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{745016c5-29cd-4698-bda9-049ba95b12be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{a89fddf4-1304-4585-a320-5e4eeba1f5d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LeaderBoard">
+      <UniqueIdentifier>{5afdad81-916d-4b8d-add9-111f6485b3fe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\GameLogic\PhysicsComponent.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\FPSCamera.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\Emitter.cpp">
+      <Filter>_Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\GameObject.cpp">
+      <Filter>_GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\RenderComponent.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\TestComponent.cpp">
+      <Filter>_Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\OverlayComponent.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\MessageSystem.cpp">
+      <Filter>_Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\GOFactory.cpp">
+      <Filter>_Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\KeyBoardMovement.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\Pool.cpp">
+      <Filter>_GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\Spawner.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\GameState.cpp">
+      <Filter>_GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\GameStateMachine.cpp">
+      <Filter>_GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\BulletShooter.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\BulletHit.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\BulletHittable.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\AttachedLightComponent.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\PhysicsControllerComponent.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\Weapon.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\CursorComponent.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\GlobalAmbientLightComponent.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\SkyBoxComponent.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\HPComponent.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\PlayerHit.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\BasicPostProcessingComponent.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\BombardierBehavior.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\SniperBehavior.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\HeavyBullethit.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\PopStateComponent.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\PushStateComponent.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\ButtonComponent.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\SoundEmitterComponent.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\CameraMenu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\GameManager.cpp" />
+    <ClCompile Include="..\..\src\GameLogic\Activable.cpp">
+      <Filter>_GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\HitPostProcessingComponent.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\TimedPostProcessingComponent.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\LeaderBoardComponent.cpp">
+      <Filter>LeaderBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\ShowLeaderBoardComponent.cpp">
+      <Filter>LeaderBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\QuitGameComponent.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\HoverButton.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\StomperBehavior.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\DestructibleSpawner.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\IndestructubleSpawner.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\BoxTriggerComponent.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\ChangePlayerGravityComponent.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\DamageTickComponent.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\UpgradeComponent.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\UpgradeManager.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\ButtonSizeChangeComponent.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\BulletHitTrigger.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\PlatformChangeStatic.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\SpinComponent.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\AutoRotationComponent.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\CircularMovementComponent.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\SinusoidalMovement.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\FollowTargetComponent.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\GameLogic\PhysicsComponent.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\FPSCamera.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\Messages.h">
+      <Filter>_Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\Emitter.h">
+      <Filter>_Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\Listener.h">
+      <Filter>_Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\GameObject.h">
+      <Filter>_GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\RenderComponent.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\Activable.h">
+      <Filter>_GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\Component.h">
+      <Filter>_Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\TestComponent.h">
+      <Filter>_Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\Initiable.h">
+      <Filter>_GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\OverlayComponent.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\MessageSystem.h">
+      <Filter>_Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\GOFactory.h">
+      <Filter>_Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\KeyBoardMovement.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\Pool.h">
+      <Filter>_GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\Spawner.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\GameStateMachine.h">
+      <Filter>_GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\GameState.h">
+      <Filter>_GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\BulletShooter.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\BulletHit.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\BulletHittable.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\AttachedLightComponent.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\PhysicsControllerComponent.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\Weapon.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\CursorComponent.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\SkyBoxComponent.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\GlobalAmbientLightComponent.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\HPComponent.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\PlayerHit.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\BasicPostProcessingComponent.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\BombardierBehavior.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\SniperBehavior.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\HeavyBulletHit.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\PushStateComponent.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\PopStateComponent.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\ButtonComponent.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\SoundEmitterComponent.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\CameraMenu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\GameManager.h" />
+    <ClInclude Include="..\..\src\GameLogic\HitPostProcessingComponent.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\TimedPostProcessingComponent.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\LeaderBoardComponent.h">
+      <Filter>LeaderBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\ShowLeaderBoardComponent.h">
+      <Filter>LeaderBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\QuitGameComponent.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\HoverButton.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\StomperBehavior.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\DestructibleSpawner.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\IndestructubleSpawner.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\BoxTriggerComponent.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\ChangePlayerGravityComponent.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\DamageTickComponent.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\UpgradeComponent.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\UpgradeManager.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\ButtonSizeChangeComponent.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\BulletHitTrigger.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\PlatformChangeStatic.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\SpinComponent.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\AutoRotationComponent.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\CircularMovementComponent.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\SinusoidalMovement.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\FollowTargetComponent.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

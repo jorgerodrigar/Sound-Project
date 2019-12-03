@@ -1,0 +1,37 @@
+{
+  "stateID_": "LeaderBoard",
+  "Manager": {
+    "id": {
+      "type": "pref_gmLeaderBoard_go"
+    }
+  },
+  "GameObjects": [
+    {
+      "id": {
+        "type": "cursor_ui"
+      }
+    },
+    {
+      "id": {
+        "type": "button_ui"
+      },
+      "Components": {
+        "button": {
+          "X": 0.92,
+          "Y": 0.0,
+          "W": 0.08,
+          "H": 0.05,
+          "msgType": 1,
+          "panelName": "LEADER_BOARD_PanelContainer",
+          "materialName": "exitButtonMaterial",
+          "name": "go_to_menu_button"
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "showLeaderBoard"
+      }
+    }
+  ]
+}

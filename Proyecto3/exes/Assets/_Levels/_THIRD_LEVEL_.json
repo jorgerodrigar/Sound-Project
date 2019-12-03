@@ -1,0 +1,191 @@
+{
+  "stateID_": "SkyScene",
+  "mapFile": "_THIRD_LEVEL_map.txt",
+  "physRequired": true,
+  "Player": {
+    "id": {
+      "name": "player",
+      "type": "pref_playerController"
+    },
+    "pos": { "x": 70.0, "y": 5.0, "z": -5.0 },
+    "Components": {
+      "lavaPostProcessing": {
+        "id": {
+          "type": "BasicPostProcessingComponent",
+          "group": "player_comps"
+        },
+        "CompositorName": "Cloud",
+        "EnabledOnStart": false,
+        "Active_Message": 12,
+        "Inactive_Message": 13
+      }
+    }
+  },
+  "Manager": {
+    "id": {
+      "type": "pref_gm_go"
+    },
+    "Components":{
+        "LevelMusic": {
+          "routeName": "holyMusic.ogg"
+        }
+    }
+  },
+  "GameObjects": [
+    {
+      "id": {
+        "type": "pref_spawner"
+      },
+      "pos": {
+        "x": -30.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": {
+        "type": "sniper_spawner"
+      }
+    },
+    {
+      "id": {
+        "type": "stomper_spawner"
+      }
+    },
+    {
+      "id": {
+        "type": "bombardier_spawner"
+      },
+      "pos": {
+        "x": -40.0,
+        "y": 30.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": {
+        "type": "pref_Enemyspawner"
+      },
+      "pos": {
+        "x": 20.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "Components": {
+        "att_light": {
+          "diffColor": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 0.0
+          }
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "pref_Enemyspawner"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 20.0
+      },
+      "ori": {
+        "w": 0.5,
+        "x": 0.5,
+        "y": -0.5,
+        "z": 0.5
+      },
+      "Components": {
+        "att_light": {
+          "diffColor": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 0.0
+          }
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "pref_Enemyspawner"
+      },
+      "pos": {
+        "x": -20.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "Components": {
+        "att_light": {
+          "diffColor": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 0.0
+          }
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "pref_Enemyspawner"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": -20.0
+      },
+      "ori": {
+        "w": 0.5,
+        "x": 0.5,
+        "y": -0.5,
+        "z": 0.5
+      },
+      "Components": {
+        "att_light": {
+          "diffColor": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 0.0
+          }
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "ambient_light"
+      },
+      "Components": {
+        "globallight": {
+          "r": 3.0,
+          "g": 3.0,
+          "b": 3.0
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "skybox"
+      },
+      "Components": {
+        "skybox": {
+          "skybox": "SkyBox4"
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "DeathPlane"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": -300.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": {
+        "type": "leaderBoard"
+      }
+    }
+  ]
+}

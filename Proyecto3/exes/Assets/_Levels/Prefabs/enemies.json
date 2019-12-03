@@ -1,0 +1,530 @@
+{
+  "Prefabs": [
+    {
+      "id": {
+        "name": "pref_monkey",
+        "type": "pref_monkey",
+        "group": "enemies"
+      },
+      "Components": {
+        "basic_phy": {
+          "id": {
+            "type": "PhysicsComponent",
+            "group": "enemy_comps"
+          },
+          "noGravity": true,
+          "linDamp": 1,
+          "angDamp": 1,
+          "shape": {
+            "type": "BOX",
+            "scale": {
+              "x": 5.0,
+              "y": 5.0,
+              "z": 5.0
+            }
+          }
+        },
+        "basic_ren": {
+          "id": {
+            "type": "RenderComponent",
+            "group": "enemy_comps"
+          },
+          "scale": {
+            "x": 200.0,
+            "y": 260.0,
+            "z": 200.0
+          },
+          "material": "MonkeyMaterial",
+          "shape": {
+            "entity_name": "monkey",
+            "type": "MESH",
+            "mesh": "monkey.mesh"
+          }
+        },
+        "FollowTargetComponent": {
+          "id": {
+            "type": "FollowTargetComponent",
+            "group": "enemy_comps"
+          },
+          "HorizontalSpeed": 3.5,
+          "Target": "player"
+        },
+        "SinusoidalMovementComponent": {
+          "id": {
+            "type": "SinusoidalMovementComponent",
+            "group": "enemy_comps"
+          },
+          "Amplitude": 0.02,
+          "speed": 1,
+          "moveY": true
+        },
+        "auto_rotation": {
+          "id": {
+            "type": "AutoRotationComponent",
+            "group": "enemy_comps"
+          },
+          "Target": "player"
+        },
+        "bullet_hittable": {
+          "id": {
+            "type": "BulletHittable",
+            "group": "enemy_comps"
+          },
+          "hp": 50,
+          "points": 50
+        },
+        "att_light": {
+          "id": {
+            "type": "AttachedLightComponent",
+            "group": "player_comps"
+          },
+          "name": "monkeyLight",
+          "fatherName": "basic_ren",
+          "type": 0,
+          "diffColor": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0
+          },
+          "specColor": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0
+          },
+          "range": 5000
+        },
+        "soundEffect": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "test_comps"
+          },
+          "routeName": "enemySound1.ogg",
+          "loop": true,
+          "3D": true,
+          "volume": 1.0
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "pref_bombardier",
+        "type": "pref_bombardier",
+        "group": "enemies"
+      },
+      "Components": {
+        "basic_phy": {
+          "id": {
+            "type": "PhysicsComponent",
+            "group": "enemy_comps"
+          },
+          "noGravity": true,
+          "linDamp": 1,
+          "angDamp": 1,
+          "shape": {
+            "type": "BOX",
+            "scale": {
+              "x": 5.0,
+              "y": 5.0,
+              "z": 5.0
+            }
+          }
+        },
+        "basic_ren": {
+          "id": {
+            "type": "RenderComponent",
+            "group": "enemy_comps"
+          },
+          "scale": {
+            "x": 200.0,
+            "y": 260.0,
+            "z": 200.0
+          },
+          "material": "ufoMaterial",
+          "shape": {
+            "entity_name": "ufo",
+            "type": "MESH",
+            "mesh": "ufo.mesh"
+          }
+        },
+        "SpinComponent": {
+          "id": {
+            "type": "SpinComponent",
+            "group": "enemy_comps"
+          },
+          "Yaw": 4,
+          "RenderComponent": "basic_ren"
+        },
+        "bombardier": {
+          "id": {
+            "type": "BombardierBehavior",
+            "group": "enemy_comps"
+          },
+          "speed": 21,
+          "Target": "player",
+          "lowY": 10,
+          "highY": 30,
+          "shootSpeed": 0.15,
+          "chargeSize": 20
+        },
+        "bullet_hittable": {
+          "id": {
+            "type": "BulletHittable",
+            "group": "enemy_comps"
+          },
+          "hp": 200,
+          "points": 250
+        },
+        "att_light": {
+          "id": {
+            "type": "AttachedLightComponent",
+            "group": "player_comps"
+          },
+          "name": "monkeyLight",
+          "fatherName": "basic_ren",
+          "type": 0,
+          "diffColor": {
+            "r": 0.0,
+            "g": 1.0,
+            "b": 0.0
+          },
+          "specColor": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0
+          },
+          "range": 5000
+        },
+        "SinusoidalMovementComponent": {
+          "id": {
+            "type": "SinusoidalMovementComponent",
+            "group": "enemy_comps"
+          },
+          "Amplitude": 0.015,
+          "speed": 2,
+          "moveY": true
+        },
+        "bombardierSound": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "sound_comp"
+          },
+          "routeName": "BombardierShoot.ogg",
+          "loop": false,
+          "3D": false,
+          "volume": 0.3
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "pref_sniper",
+        "type": "pref_sniper",
+        "group": "enemies"
+      },
+      "Components": {
+        "basic_phy": {
+          "id": {
+            "type": "PhysicsComponent",
+            "group": "enemy_comps"
+          },
+          "noGravity": true,
+          "linDamp": 1,
+          "angDamp": 1,
+          "shape": {
+            "type": "BOX",
+            "scale": {
+              "x": 5.0,
+              "y": 5.0,
+              "z": 5.0
+            }
+          }
+        },
+        "basic_ren": {
+          "id": {
+            "type": "RenderComponent",
+            "group": "enemy_comps"
+          },
+          "auto_rotation": {
+            "id": {
+              "type": "AutoRotationComponent",
+              "group": "enemy_comps"
+            },
+            "Target": "player"
+          },
+          "scale": {
+            "x": 500,
+            "y": 500,
+            "z": 500
+          },
+          "material": "golemMaterial",
+          "shape": {
+            "entity_name": "golem",
+            "type": "MESH",
+            "mesh": "golem.mesh"
+          }
+        },
+        "sniperSound": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "sound_comp"
+          },
+          "routeName": "SniperShoot.ogg",
+          "loop": false,
+          "3D": false,
+          "volume": 0.5
+        },
+        "sniper": {
+          "id": {
+            "type": "SniperBehavior",
+            "group": "enemy_comps"
+          },
+          "speed": 7,
+          "Target": "player",
+          "lowY": -11,
+          "highY": 4,
+          "shotSpeed": 70,
+          "actionDelay": 1.4,
+          "LavaScene": [
+            {
+              "x": 85.0,
+              "y": 0.0,
+              "z": 40.0
+            },
+            {
+              "x": 85.0,
+              "y": 0.0,
+              "z": -40.0
+            },
+            {
+              "x": -85.0,
+              "y": 0.0,
+              "z": 40.0
+            },
+            {
+              "x": -85.0,
+              "y": 0.0,
+              "z": -40.0
+            },
+            {
+              "x": 40.0,
+              "y": 0.0,
+              "z": 85.0
+            },
+            {
+              "x": -40.0,
+              "y": 0.0,
+              "z": 85.0
+            },
+            {
+              "x": -40.0,
+              "y": 0.0,
+              "z": -85.0
+            },
+            {
+              "x": 40.0,
+              "y": 0.0,
+              "z": -85.0
+            }
+          ],
+          "WaterScene": [
+            {
+              "x": 30.0,
+              "y": 0.0,
+              "z": 15.0
+            },
+            {
+              "x": -30.0,
+              "y": 0.0,
+              "z": 15.0
+            },
+            {
+              "x": 30.0,
+              "y": 0.0,
+              "z": -30.0
+            },
+            {
+              "x": 30.0,
+              "y": 0.0,
+              "z": 60.0
+            },
+            {
+              "x": -30.0,
+              "y": 0.0,
+              "z": -30.0
+            },
+            {
+              "x": -30.0,
+              "y": 0.0,
+              "z": 60.0
+            },
+            {
+              "x": 110.0,
+              "y": 0.0,
+              "z": 60.0
+            },
+            {
+              "x": -110.0,
+              "y": 0.0,
+              "z": -60.0
+            },
+            {
+              "x": 110.0,
+              "y": 0.0,
+              "z": -60.0
+            },
+            {
+              "x": -110.0,
+              "y": 0.0,
+              "z": 60.0
+            }
+          ],
+          "SkyScene": [
+            {
+              "x": 100.0,
+              "y": 0.0,
+              "z": 40.0
+            },
+            {
+              "x": 100.0,
+              "y": 0.0,
+              "z": -40.0
+            },
+            {
+              "x": -100.0,
+              "y": 0.0,
+              "z": 40.0
+            },
+            {
+              "x": -100.0,
+              "y": 0.0,
+              "z": -40.0
+            },
+            {
+              "x": 40.0,
+              "y": 0.0,
+              "z": 100.0
+            },
+            {
+              "x": -40.0,
+              "y": 0.0,
+              "z": 100.0
+            },
+            {
+              "x": -40.0,
+              "y": 0.0,
+              "z": -100.0
+            },
+            {
+              "x": 40.0,
+              "y": 0.0,
+              "z": -100.0
+            }
+          ]
+        },
+        "bullet_hittable": {
+          "id": {
+            "type": "BulletHittable",
+            "group": "enemy_comps"
+          },
+          "hp": 150,
+          "points": 250
+        },
+        "att_light": {
+          "id": {
+            "type": "AttachedLightComponent",
+            "group": "player_comps"
+          },
+          "name": "monkeyLight",
+          "fatherName": "basic_ren",
+          "type": 0,
+          "diffColor": {
+            "r": 0.0,
+            "g": 1.0,
+            "b": 1.0
+          },
+          "specColor": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0
+          },
+          "range": 5000
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "pref_stomper",
+        "type": "pref_stomper",
+        "group": "enemies"
+      },
+      "Components": {
+        "basic_phy": {
+          "id": {
+            "type": "PhysicsComponent",
+            "group": "enemy_comps"
+          },
+          "noGravity": true,
+          "linDamp": 1,
+          "angDamp": 1,
+          "shape": {
+            "type": "BOX",
+            "scale": {
+              "x": 5.0,
+              "y": 5.0,
+              "z": 5.0
+            }
+          }
+        },
+        "basic_ren": {
+          "id": {
+            "type": "RenderComponent",
+            "group": "enemy_comps"
+          },
+          "scale": {
+            "x": 225.0,
+            "y": 250.0,
+            "z": 225.0
+          },
+          "material": "StomperMaterial",
+          "shape": {
+            "entity_name": "foot",
+            "type": "MESH",
+            "mesh": "foot.mesh"
+          }
+        },
+        "stomper": {
+          "id": {
+            "type": "StomperBehavior",
+            "group": "enemy_comps"
+          },
+          "Target": "player",
+          "speed": 45,
+          "actionDelay": 2,
+          "shotSpeed": 50,
+          "lowY": 1,
+          "highY": 20,
+          "maxBullets": 3,
+          "maxJumps": 2
+        },
+        "bullet_hittable": {
+          "id": {
+            "type": "BulletHittable",
+            "group": "enemy_comps"
+          },
+          "hp": 320,
+          "points": 500
+        },
+        "stomperSound": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "sound_comp"
+          },
+          "routeName": "StomperShoot.ogg",
+          "loop": false,
+          "3D": false,
+          "volume": 0.3
+        }
+      }
+    }
+  ]
+}

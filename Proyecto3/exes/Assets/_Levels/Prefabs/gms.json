@@ -1,0 +1,366 @@
+{
+  "Prefabs": [
+    {
+      "id": {
+        "name": "gm_go",
+        "type": "pref_gm_go",
+        "group": "manage_gameObjects"
+      },
+      "Components": {
+        "canvas": {
+          "id": {
+            "type": "OverlayComponent",
+            "group": "ui_overlay"
+          },
+          "overlay_name": "HUD",
+          "panel_container": "HUD_PanelContainer",
+          "panel container": "DEATH_PANEL"
+        },
+        "push_pause": {
+          "id": {
+            "type": "PushStateComponent",
+            "group": "test_comps"
+          },
+          "key": "esc",
+          "json": "_PAUSE_LEVEL_"
+        },
+        "push_death": {
+          "id": {
+            "type": "PushStateComponent",
+            "group": "test_comps"
+          },
+          "key": "",
+          "json": "_DEATH_LEVEL_"
+        },
+        "game_manager_comp": {
+          "id": {
+            "type": "GameManager",
+            "group": "manage_components"
+          },
+          "death_state": "push_death",
+          "hitMarker_soundEmitter": "hitMarkerSound",
+          "deathMarker_soundEmitter": "deathMarkerSound",
+          "json": "_PAUSE_LEVEL_",
+          "hitTime": 0.1,
+          "deathTime": 0.3,
+          "roundTime": 2.5
+        },
+        "LevelMusic": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "test_comps"
+          },
+          "routeName": "ophelia.mp3",
+          "customName": "LevelMusic",
+          "3D": false,
+          "volume": 0.07
+        },
+        "hitMarkerSound": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "test_comps"
+          },
+          "routeName": "hitmarker.ogg",
+          "customName": "hitMarkerSound",
+          "3D": false,
+          "volume": 0.1,
+          "startPaused": true,
+          "loop": false
+        },
+        "deathMarkerSound": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "test_comps"
+          },
+          "routeName": "enemyDeathSound.ogg",
+          "customName": "deathMarkerSound",
+          "3D": false,
+          "volume": 0.1,
+          "startPaused": true,
+          "loop": false
+        },
+        "handle_input": {
+          "id": {
+            "type": "PopStateComponent",
+            "group": "test_comps"
+          },
+          "key": "j",
+          "state": "Menu"
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "gmPause_go",
+        "type": "pref_gmPause_go",
+        "group": "manage_gameObjects"
+      },
+      "Components": {
+        "canvas": {
+          "id": {
+            "type": "OverlayComponent",
+            "group": "test_comps"
+          },
+          "overlay_name": "PAUSE",
+          "panel_container": "PAUSE_PanelContainer"
+        },
+        "canvas2": {
+          "id": {
+            "type": "OverlayComponent",
+            "group": "ui_overlay"
+          },
+          "overlay_name": "FRAME",
+          "panel_container": "FRAME_PanelContainer"
+        },
+        "pauseLevelMusic": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "test_comps"
+          },
+          "routeName": "pauseScoreMusic.ogg",
+          "customName": "pauseLevelMusic",
+          "3D": false,
+          "volume": 0.15
+        },
+        "pop_state_main": {
+          "id": {
+            "type": "PopStateComponent",
+            "group": "test_comps"
+          },
+          "key": "p",
+          "state": "",
+          "popSimple": true
+        },
+        "pop_state_menu": {
+          "id": {
+            "type": "PopStateComponent",
+            "group": "test_comps"
+          },
+          "key": "",
+          "state": "Menu"
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "gmMenu_go",
+        "type": "pref_gmMenu_go",
+        "group": "manage_gameObjects"
+      },
+      "Components": {
+        "canvas": {
+          "id": {
+            "type": "OverlayComponent",
+            "group": "test_comps"
+          },
+          "overlay_name": "MENU",
+          "panel_container": "MENU_PanelContainer"
+        },
+        "canvas2": {
+          "id": {
+            "type": "OverlayComponent",
+            "group": "ui_overlay"
+          },
+          "overlay_name": "MENU_FRAME",
+          "panel_container": "MENU_FRAME_PanelContainer"
+        },
+        "push_state_main": {
+          "id": {
+            "type": "PushStateComponent",
+            "group": "test_comps"
+          },
+          "key": "",
+          "json": "_SELECT_LEVEL_LEVEL_"
+        },
+        "menuMusic": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "test_comps"
+          },
+          "routeName": "introMusic.ogg",
+          "customName": "menuMusic",
+          "3D": false,
+          "volume": 0.2
+        },
+        "push_state_leader_board": {
+          "id": {
+            "type": "PushStateComponent",
+            "group": "test_comps"
+          },
+          "key": "",
+          "json": "_LEADER_BOARD_LEVEL_"
+        },
+        "QuitGameComponent": {
+          "id": {
+            "type": "QuitGameComponent",
+            "group": "test_comps"
+          }
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "gmDeath_go",
+        "type": "pref_gmDeath_go",
+        "group": "manage_gameObjects"
+      },
+      "Components": {
+        "canvas": {
+          "id": {
+            "type": "OverlayComponent",
+            "group": "test_comps"
+          },
+          "overlay_name": "DEATH",
+          "panel_container": "DEATH_PANEL"
+        },
+        "canvas2": {
+          "id": {
+            "type": "OverlayComponent",
+            "group": "ui_overlay"
+          },
+          "overlay_name": "FRAME",
+          "panel_container": "FRAME_PanelContainer"
+        },
+        "deathMusic": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "test_comps"
+          },
+          "routeName": "deathMusic.ogg",
+          "customName": "deathMusic",
+          "loop": false,
+          "3D": false,
+          "volume": 0.2
+        },
+        "deathSound": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "test_comps"
+          },
+          "routeName": "deathSound.ogg",
+          "3D": false,
+          "loop":false,
+          "volume": 0.7
+        },
+        "pop_state": {
+          "id": {
+            "type": "PopStateComponent",
+            "group": "test_comps"
+          },
+          "key": "",
+          "state": "Menu"
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "gmLeaderBoard_go",
+        "type": "pref_gmLeaderBoard_go",
+        "group": "manage_gameObjects"
+      },
+      "Components": {
+        "canvas": {
+          "id": {
+            "type": "OverlayComponent",
+            "group": "ui_overlay"
+          },
+          "overlay_name": "LEADER_BOARD",
+          "panel_container": "LEADER_BOARD_PanelContainer"
+        },
+        "canvas2": {
+          "id": {
+            "type": "OverlayComponent",
+            "group": "ui_overlay"
+          },
+          "overlay_name": "FRAME",
+          "panel_container": "FRAME_PanelContainer"
+        },
+        "pop_state": {
+          "id": {
+            "type": "PopStateComponent",
+            "group": "test_comps"
+          },
+          "key": "",
+          "state": "Menu"
+        },
+        "LBMusic": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "test_comps"
+          },
+          "routeName": "pauseScoreMusic.ogg",
+          "customName": "LBMusic",
+          "3D": false,
+          "volume": 0.2
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "gmSelectLevel_go",
+        "type": "pref_gmSelectLevel_go",
+        "group": "manage_gameObjects"
+      },
+      "Components": {
+        "canvas": {
+          "id": {
+            "type": "OverlayComponent",
+            "group": "ui_overlay"
+          },
+          "overlay_name": "SELECT_LEVEL",
+          "panel_container": "SELECT_LEVEL_PanelContainer"
+        },
+        "canvas2": {
+          "id": {
+            "type": "OverlayComponent",
+            "group": "ui_overlay"
+          },
+          "overlay_name": "FRAME",
+          "panel_container": "FRAME_PanelContainer"
+        },
+        "selectLevelMusic": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "test_comps"
+          },
+          "routeName": "pauseScoreMusic.ogg",
+          "customName": "selectLevelMusic",
+          "3D": false,
+          "volume": 0.2
+        },
+        "pop_state": {
+          "id": {
+            "type": "PopStateComponent",
+            "group": "test_comps"
+          },
+          "key": "",
+          "state": "Menu"
+        },
+        "push_state_main": {
+          "id": {
+            "type": "PushStateComponent",
+            "group": "test_comps"
+          },
+          "key": "",
+          "json": "_MAIN_LEVEL_"
+        },
+        "push_state_second": {
+          "id": {
+            "type": "PushStateComponent",
+            "group": "test_comps"
+          },
+          "key": "",
+          "json": "_SECOND_LEVEL_"
+        },
+        "push_state_third": {
+          "id": {
+            "type": "PushStateComponent",
+            "group": "test_comps"
+          },
+          "key": "",
+          "json": "_THIRD_LEVEL_"
+        }
+      }
+    }
+  ]
+}

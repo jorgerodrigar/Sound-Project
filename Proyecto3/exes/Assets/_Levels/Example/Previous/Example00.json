@@ -1,0 +1,32 @@
+{
+    "GameObjects": [
+        {
+            "Name": "Caracol",
+            "GOParameters":["10", "-", "-"],
+            "Custom": [
+                {
+                    "Name": "Render",
+                    "Parameters": [
+                        "2",
+                        "-"
+                    ]
+                }
+            ],
+            "ComponentMessages": [
+                {
+                    "Emitter": "Render",
+                    "Listener": "Update"
+                }
+            ]
+        },
+        {
+            "Name": "Limon"
+        }
+    ],
+    "GameObjectMessages": [
+        {
+            "Emitter": "Caracol",
+            "Listener": "Limon"
+        }
+    ]
+}

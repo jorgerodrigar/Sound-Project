@@ -1,0 +1,288 @@
+{
+  "Prefabs": [
+    {
+      "id": {
+        "name": "pref_spawner",
+        "type": "pref_spawner",
+        "group": "indestructible_spawner"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Components": {
+        "spawner": {
+          "id": {
+            "type": "IndestructibleSpawner",
+            "group": "test_comps"
+          },
+          "active": true,
+          "itemString": "pref_monkey",
+          "default": 5,
+          "timer": 4.0,
+          "smart": false,
+          "spawnAlgorithm": "LOG",
+          "spawnFactor": 1.04,
+          "timeAlgorithm": "JUMPS",
+          "timeFactor": 0.1
+        },
+        "circular_movement": {
+          "id": {
+            "type": "CircularMovementComponent",
+            "group": "test_comps"
+          },
+          "Speed": 0.3,
+          "Radius": 50
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "pref_Enemyspawner",
+        "type": "pref_Enemyspawner",
+        "group": "destructible_spawner"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ori": {
+        "w": 0.707,
+        "x": 0.707,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Components": {
+        "spawner": {
+          "id": {
+            "type": "DestructibleSpawner",
+            "group": "test_comps"
+          },
+          "active": true,
+          "itemString": "pref_monkey",
+          "default": 5,
+          "timer": 25.0,
+          "radius": 10.0,
+          "smart": true,
+          "soundEmitter": "portalSound"
+        },
+        "basic_phy": {
+          "id": {
+            "type": "PhysicsComponent",
+            "group": "enemy_comps"
+          },
+          "dynamic": false,
+          "noGravity": true,
+          "shape": {
+            "type": "BOX",
+            "scale": {
+              "x": 15.0,
+              "y": 12.5,
+              "z": 15.0
+            }
+          }
+        },
+        "portal_ren": {
+          "id": {
+            "type": "RenderComponent",
+            "group": "enemy_comps"
+          },
+          "scale": {
+            "x": 1.25,
+            "y": 1.25,
+            "z": 1.5
+          },
+          "relativePos": {
+            "x": 0,
+            "y": -5,
+            "z": 0
+          },
+          "material": "stone",
+          "shape": {
+            "entity_name": "portal",
+            "type": "MESH",
+            "mesh": "portal.mesh"
+          },
+          "ignoreTrans": true
+        },
+        "basic_ren": {
+          "id": {
+            "type": "RenderComponent",
+            "group": "enemy_comps"
+          },
+          "shape": {
+            "entity_name": "portal_plane",
+            "type": "PLANE",
+            "normal": {
+              "x": -1,
+              "y": 0,
+              "z": 0
+            },
+            "w": 9,
+            "h": 9,
+            "up": {
+              "x": 0,
+              "y": 1,
+              "z": 0
+            }
+          },
+          "relativePos": {
+            "x": 0,
+            "y": 1,
+            "z": 0
+          },
+          "material": "portal",
+          "ignoreTrans": false
+        },
+        "bullet_hittable": {
+          "id": {
+            "type": "BulletHittable",
+            "group": "enemy_comps"
+          },
+          "hp": 300,
+          "points": 50,
+          "deactivate": false
+        },
+        "att_light": {
+          "id": {
+            "type": "AttachedLightComponent",
+            "group": "player_comps"
+          },
+          "name": "portalLight",
+          "fatherName": "portal_ren",
+          "type": 1,
+          "diffColor": {
+            "r": 7.0,
+            "g": 0.0,
+            "b": 0.0
+          },
+          "specColor": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0
+          },
+          "range": 5000
+        },
+        "portalSound": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "test_comps"
+          },
+          "routeName": "portalSound.ogg",
+          "3D": true,
+          "volume": 1.0,
+          "startPaused": true,
+          "loop": true
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "bombardier_spawner",
+        "type": "bombardier_spawner",
+        "group": "indestructible_spawner"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Components": {
+        "spawner": {
+          "id": {
+            "type": "IndestructibleSpawner",
+            "group": "test_comps"
+          },
+          "active": true,
+          "itemString": "pref_bombardier",
+          "default": 5,
+          "timer": 12.0,
+          "smart": false,
+          "spawnAlgorithm": "MOD",
+          "spawnFactor": 2,
+          "timeAlgorithm": "JUMPS",
+          "timeFactor": 0.05
+        },
+        "circular_movement": {
+          "id": {
+            "type": "CircularMovementComponent",
+            "group": "test_comps"
+          },
+          "Speed": 0.3,
+          "Radius": 50
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "sniper_spawner",
+        "type": "sniper_spawner",
+        "group": "indestructible_spawner"
+      },
+      "Components": {
+        "spawner": {
+          "id": {
+            "type": "IndestructibleSpawner",
+            "group": "test_comps"
+          },
+          "active": true,
+          "itemString": "pref_sniper",
+          "default": 5,
+          "timer": 10.0,
+          "smart": false,
+          "spawnAlgorithm": "MOD",
+          "spawnFactor": 3,
+          "timeAlgorithm": "JUMPS",
+          "timeFactor": 0.05
+        },
+        "circular_movement": {
+          "id": {
+            "type": "CircularMovementComponent",
+            "group": "test_comps"
+          },
+          "Speed": 0.3,
+          "Radius": 50
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "stomper_spawner",
+        "type": "stomper_spawner",
+        "group": "indestructible_spawner"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Components": {
+        "spawner": {
+          "id": {
+            "type": "IndestructibleSpawner",
+            "group": "test_comps"
+          },
+          "active": true,
+          "itemString": "pref_stomper",
+          "default": 5,
+          "timer": 20.0,
+          "smart": false,
+          "spawnAlgorithm": "MOD",
+          "spawnFactor": 5,
+          "timeAlgorithm": "JUMPS",
+          "timeFactor": 0
+        },
+        "circular_movement": {
+          "id": {
+            "type": "CircularMovementComponent",
+            "group": "test_comps"
+          },
+          "Speed": 0.3,
+          "Radius": 50
+        }
+      }
+    }
+  ]
+}

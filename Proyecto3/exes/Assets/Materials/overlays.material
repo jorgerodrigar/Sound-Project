@@ -1,0 +1,287 @@
+material TitleMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture Title.png
+			}
+		}
+	}
+}
+
+material woodBackground
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture woodBackground.png
+			}
+		}
+	}
+}
+
+material ButtonMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture Controller.png
+			}
+		}
+	}
+}
+
+material FullControlsMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture fullcontrols.png
+			}
+		}
+	}
+}
+
+material LavaLevelSS
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture LavaLevelSS.png
+			}
+		}
+	}
+}
+
+material IceLevelSS
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture IceLevelSS.png
+			}
+		}
+	}
+}
+
+material HolyLevelSS
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture HolyLevelSS.png
+			}
+		}
+	}
+}
+
+material startButtonMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture startButton.png
+			}
+		}
+	}
+}
+
+material scoreButtonMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture scoreButton.png
+			}
+		}
+	}
+}
+
+material menuButtonMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture menuButton.png
+			}
+		}
+	}
+}
+
+material exitButtonMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture exitButton.png
+			}
+		}
+	}
+}
+
+material continueButtonMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture continueButton.png
+			}
+		}
+	}
+}
+
+material ScopeMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture eye-wide-open.png
+			}
+		}
+	}
+}
+
+material HitMarkerMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture hit-marker.png
+			}
+		}
+	}
+}
+
+material DeathMarkerMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture death-marker.png
+			}
+		}
+	}
+}
+
+material LifeStripeMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture lifeStripe.png
+			}
+		}
+	}
+}
+
+material LifeDifMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture lifeDif.png
+			}
+		}
+	}
+}
+
+material LifeContainerMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+
+			texture_unit
+			{
+				texture lifeContainer.png
+			}
+		}
+	}
+}

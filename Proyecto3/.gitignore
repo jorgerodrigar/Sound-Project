@@ -1,0 +1,7 @@
+# Our solution temp dirs
+libs/
+inter/
+
+scores/
+
+# exes/ contains the assets

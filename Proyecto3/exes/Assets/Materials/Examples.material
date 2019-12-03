@@ -1,0 +1,318 @@
+material DebugMaterial
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+			texture_unit
+			{
+				texture 1d_debug.png
+			}
+		}
+	}
+}
+
+material Material
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+		}
+	}
+}
+
+material MonkeyMaterial
+{
+	technique
+	{
+		pass
+		{
+			lighting on
+            ambient 0.800000011920929 0.800000011920929 0.800000011920929 1.0
+            
+            alpha_to_coverage off 
+            colour_write on 
+            cull_hardware clockwise 
+            depth_check on 
+            depth_func less_equal 
+            depth_write on 
+            illumination_stage  
+            light_clip_planes off 
+            light_scissor off 
+            normalise_normals off 
+            polygon_mode solid 
+            scene_blend one zero 
+            scene_blend_op add 
+            shading gouraud 
+            transparent_sorting on
+			texture_unit
+			
+			{
+				texture monkeyTex.png
+			}
+		}
+	}
+}
+
+material ufoMaterial
+{
+	technique
+	{
+		pass
+		{
+			lighting on
+            ambient 0.800000011920929 0.800000011920929 0.800000011920929 1.0
+            
+            alpha_to_coverage off 
+            colour_write on 
+            cull_hardware clockwise 
+            depth_check on 
+            depth_func less_equal 
+            depth_write on 
+            illumination_stage  
+            light_clip_planes off 
+            light_scissor off 
+            normalise_normals off 
+            polygon_mode solid 
+            scene_blend one zero 
+            scene_blend_op add 
+            shading gouraud 
+            transparent_sorting on
+
+			cull_hardware none
+
+			texture_unit
+			{
+				texture ufoTexture.png
+			}
+		}
+	}
+}
+
+material golemMaterial
+{
+	technique
+	{
+		pass
+		{
+			lighting on
+            ambient 0.800000011920929 0.800000011920929 0.800000011920929 1.0
+            
+            alpha_to_coverage off 
+            colour_write on 
+            cull_hardware clockwise 
+            depth_check on 
+            depth_func less_equal 
+            depth_write on 
+            illumination_stage  
+            light_clip_planes off 
+            light_scissor off 
+            normalise_normals off 
+            polygon_mode solid 
+            scene_blend one zero 
+            scene_blend_op add 
+            shading gouraud 
+            transparent_sorting on
+
+			texture_unit
+			{
+				texture golemTex.png
+			}
+		}
+	}
+}
+
+
+material StomperMaterial
+{
+	technique
+	{
+		pass
+		{
+			lighting on
+            ambient 0.800000011920929 0.800000011920929 0.800000011920929 1.0
+            
+            alpha_to_coverage off 
+            colour_write on 
+            cull_hardware clockwise 
+            depth_check on 
+            depth_func less_equal 
+            depth_write on 
+            illumination_stage  
+            light_clip_planes off 
+            light_scissor off 
+            normalise_normals off 
+            polygon_mode solid 
+            scene_blend one zero 
+            scene_blend_op add 
+            shading gouraud 
+            transparent_sorting on
+			
+			texture_unit
+			{
+				texture foot.png
+			}
+		}
+	}
+}
+
+material portal.001
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+		}
+	}
+}
+material portal.002
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+		}
+	}
+}
+
+material portal.003
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+		}
+	}
+}
+
+material portal.004
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+		}
+	}
+}
+
+material EyeMaterial
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture eyetext.png
+			}
+		}
+	}
+}
+
+material DebugMaterial2
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+			texture_unit
+			{
+				texture randomTexture.jpg
+			}
+		}
+	}
+}
+
+material DebugMaterial3
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+			texture_unit
+			{
+				texture Dr_Bunsen_Head.jpg
+			}
+		}
+	}
+}
+
+material NinjaMaterial
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+			texture_unit
+			{
+				texture nskingr.jpg
+			}
+		}
+	}
+}
+
+material SkyBox
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			texture_unit
+			{
+				texture cubemap.jpg cubic
+				tex_address_mode clamp
+				env_map cubic_reflection
+			}
+		}
+	}
+}
+
+material DefaultMaterial {
+    receive_shadows on
+    technique {
+        pass {
+            lighting on
+            ambient 0.800000011920929 0.800000011920929 0.800000011920929 1.0
+            diffuse 0.6400000190734865 0.6400000190734865 0.6400000190734865 1.0
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+            
+            alpha_to_coverage off 
+            colour_write on 
+            cull_hardware clockwise 
+            depth_check on 
+            depth_func less_equal 
+            depth_write on 
+            illumination_stage  
+            light_clip_planes off 
+            light_scissor off 
+            normalise_normals off 
+            polygon_mode solid 
+            scene_blend one zero 
+            scene_blend_op add 
+            shading gouraud 
+            transparent_sorting on 
+
+        }
+    }
+}

@@ -1,0 +1,13 @@
+1 FallingTile
+n non
+O BigTile
+o Tile
+0 non
+L LavaBigTile
+l LavaTile
+H IceBigTile
+h WoodIceTile
+g HolyTile
+G HolyBigTile
+M Spawn
+W SpawnR

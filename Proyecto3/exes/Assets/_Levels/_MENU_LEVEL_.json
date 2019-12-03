@@ -1,0 +1,128 @@
+{
+  "stateID_": "Menu",
+  "Manager": {
+    "id": {
+      "type": "pref_gmMenu_go"
+    }
+  },
+  "GameObjects": [
+    {
+      "id": {
+        "type": "cursor_ui"
+      }
+    },
+    {
+      "id": {
+        "type": "button_ui"
+      },
+      "Components": {
+        "button": {
+          "listener": "push_state_main"
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "button_ui"
+      },
+      "Components": {
+        "button": {
+          "Y": 0.75,
+          "materialName": "scoreButtonMaterial",
+          "name": "leader_board_button",
+          "listener": "push_state_leader_board"
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "camera_menu"
+      }
+    },
+    {
+      "id": {
+        "type": "skybox"
+      },
+      "Components": {
+        "skybox": {
+          "skybox": "SkyBox2"
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "PlaneLava"
+      },
+      "pos": {
+        "x": -5.0,
+        "y": -25.0,
+        "z": 0.0
+      },
+      "Components": {
+        "basic_ren": {
+          "shape": {
+            "w": 3000,
+            "h": 3000
+          }
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "monkey_menu"
+      }
+    },
+    {
+      "id": {
+        "type": "monkey_menu"
+      },
+      "pos": {
+        "x": 1.0,
+        "y": 15.0,
+        "z": 0.0
+      },
+      "Components": {
+        "circular_movement": {
+          "Speed": -1.5
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "monkey_menu"
+      },
+      "pos": {
+        "x": 1.0,
+        "y": -15.0,
+        "z": 0.0
+      },
+      "Components": {
+        "circular_movement": {
+          "Speed": -1.5
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "button_ui"
+      },
+      "Components": {
+        "button": {
+          "msgType": 2,
+          "X": 0.92,
+          "Y": 0.0,
+          "W": 0.08,
+          "H": 0.05,
+          "materialName": "exitButtonMaterial",
+          "name": "quit_game_button",
+          "listener": "QuitGameComponent"
+        }
+      }
+    },
+    {
+      "id": {
+        "type": "HoverButton_ui"
+      }
+    }
+  ]
+}

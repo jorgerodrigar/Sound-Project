@@ -1,0 +1,63 @@
+{
+    "Caracol":[
+        {
+            "GOParameters":["0", "0", "0"]
+        },
+        
+        {
+          "Name" : "Render",
+          "Parameters": {
+            "POS": {
+              "X": 50,
+              "Y": 20,
+              "Z": 20
+            }
+          }
+        },
+        {
+            "Name" : "Update",
+            "Parameters":
+            [
+                "2"
+            ]
+        }
+    ],
+    "Limon":[
+        {
+            "GOParameters":["0", "0", "0"]
+        },
+        
+        {
+            "Name" : "Render",
+            "Parameters":
+            [
+                "20", "20"
+            ]
+        }
+    ],
+
+    "Tile":[
+        {
+            "GOParameters":["0", "0", "0"]
+        },
+        {
+            "Name" : "Render",
+            "Parameters":
+            [
+                "10", "10"
+            ]
+        }
+    ],
+    "FallingTile":[
+        {
+            "GOParameters":["0", "0", "0"]
+        },
+        {
+            "Name" : "Render",
+            "Parameters":
+            [
+                "30", "10"
+            ]
+        }
+    ]
+}

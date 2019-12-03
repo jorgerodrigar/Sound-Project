@@ -1,0 +1,269 @@
+//-------------------------------------BLACK AND WHITE------------------------------
+vertex_program B&WVS glsl
+{
+    source vertexShaderSimple.txt //reutilizamos del vertexShaderSimple
+
+    default_params
+    {
+        param_named_auto modelViewProjMat worldviewproj_matrix
+    }
+}
+
+fragment_program B&WFS glsl
+{
+    source B&WFS.txt
+    default_params{
+        param_named RTT0 int 0 //textura con la escena
+        param_named text int 1
+        param_named alpha custom 1.0
+    }
+}
+
+
+material B&WMat{
+    technique{
+        pass{
+            depth_check off //descativamos el depth-buffer
+            depth_write off
+
+            vertex_program_ref B&WVS{
+
+            }
+
+            fragment_program_ref B&WFS{
+
+            }
+
+            texture_unit RTT0{
+                //sin imagen de archivo -> render target previo
+                filtering none //resolucion del viewport
+            }
+        }
+    }
+}
+
+//-------------------------------------Test------------------------------
+vertex_program TestVS glsl
+{
+    source TestVS.txt
+    default_params
+    {
+        param_named_auto modelViewProjMat worldviewproj_matrix
+        param_named_auto timeA time_0_1 10
+    }
+}
+
+fragment_program TestFS glsl
+{
+    source TestFS.txt
+    default_params{
+        param_named RTT0 int 0 //textura con la escena
+        param_named text int 1
+    }
+}
+
+material TestMat{
+    technique{
+        pass{
+            depth_check off //descativamos el depth-buffer
+            depth_write off
+
+            vertex_program_ref TestVS{
+
+            }
+
+            fragment_program_ref TestFS{
+
+            }
+
+            texture_unit RTT0{
+                //sin imagen de archivo -> render target previo
+                filtering none //resolucion del viewport
+            }
+
+            texture_unit text{
+                texture Sintitulo.jpg 2d
+            }
+        }
+    }
+}
+
+//-------------------------------------BLOOD (MIX)------------------------------
+vertex_program BloodMixVS glsl
+{
+    source vertexShaderSimple.txt //reutilizamos del vertexShaderSimple
+    default_params
+    {
+        param_named_auto modelViewProjMat worldviewproj_matrix
+    }
+}
+
+fragment_program BloodMixFS glsl
+{
+    source SceneTextureMixFS.txt
+    default_params{
+        param_named RTT0 int 0 //textura con la escena
+        param_named text int 1
+    }
+}
+
+material BloodMixMat{
+    technique{
+        pass{
+            depth_check off //descativamos el depth-buffer
+            depth_write off
+
+            vertex_program_ref BloodMixVS{
+
+            }
+
+            fragment_program_ref BloodMixFS{
+
+            }
+
+            texture_unit RTT0{
+                //sin imagen de archivo -> render target previo
+                filtering none //resolucion del viewport
+            }
+
+            texture_unit text{
+                texture bloodLow.png 2d
+            }
+        }
+    }
+}
+
+//-------------------------------------LAVA (MIX)------------------------------
+vertex_program LavaVS glsl
+{
+    source vertexShaderSimple.txt //reutilizamos del vertexShaderSimple
+    default_params
+    {
+        param_named_auto modelViewProjMat worldviewproj_matrix
+    }
+}
+
+fragment_program LavaFS glsl
+{
+    source SceneTextureMixFS.txt
+    default_params{
+        param_named RTT0 int 0 //textura con la escena
+        param_named text int 1
+    }
+}
+
+material LavaMat{
+    technique{
+        pass{
+            depth_check off //descativamos el depth-buffer
+            depth_write off
+
+            vertex_program_ref LavaVS{
+
+            }
+
+            fragment_program_ref LavaFS{
+
+            }
+
+            texture_unit RTT0{
+                //sin imagen de archivo -> render target previo
+                filtering none //resolucion del viewport
+            }
+
+            texture_unit text{
+                texture lava.png 2d
+            }
+        }
+    }
+}
+
+//-------------------------------------WATER (MIX)------------------------------
+vertex_program WaterVS glsl
+{
+    source vertexShaderSimple.txt //reutilizamos del vertexShaderSimple
+    default_params
+    {
+        param_named_auto modelViewProjMat worldviewproj_matrix
+    }
+}
+
+fragment_program WaterFS glsl
+{
+    source SceneTextureMixFS.txt
+    default_params{
+        param_named RTT0 int 0 //textura con la escena
+        param_named text int 1
+    }
+}
+
+material WaterMat{
+    technique{
+        pass{
+            depth_check off //descativamos el depth-buffer
+            depth_write off
+
+            vertex_program_ref WaterVS{
+
+            }
+
+            fragment_program_ref WaterFS{
+
+            }
+
+            texture_unit RTT0{
+                //sin imagen de archivo -> render target previo
+                filtering none //resolucion del viewport
+            }
+
+            texture_unit text{
+                texture bubbles.png 2d
+            }
+        }
+    }
+}
+
+//-------------------------------------CLOUD (MIX)------------------------------
+vertex_program CloudVS glsl
+{
+    source vertexShaderSimple.txt //reutilizamos del vertexShaderSimple
+    default_params
+    {
+        param_named_auto modelViewProjMat worldviewproj_matrix
+    }
+}
+
+fragment_program CloudFS glsl
+{
+    source underWaterFS.txt
+    default_params{
+        param_named RTT0 int 0 //textura con la escena
+        param_named mixColor float3 0.5 0.5 0.5
+    }
+}
+
+material CloudMat{
+    technique{
+        pass{
+            depth_check off //descativamos el depth-buffer
+            depth_write off
+
+            vertex_program_ref CloudVS{
+
+            }
+
+            fragment_program_ref CloudFS{
+
+            }
+
+            texture_unit RTT0{
+                //sin imagen de archivo -> render target previo
+                filtering none //resolucion del viewport
+            }
+			
+			texture_unit text{
+                texture hielo.jpg 2d
+            }
+        }
+    }
+}
