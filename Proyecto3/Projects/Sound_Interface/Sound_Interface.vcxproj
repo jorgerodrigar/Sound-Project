@@ -19,11 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\Sound_Interface\SoundFMOD.cpp" />
     <ClCompile Include="..\..\src\Sound_Interface\SoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\Sound_Interface\SoundFMOD.h" />
     <ClInclude Include="..\..\src\Sound_Interface\SoundManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

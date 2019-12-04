@@ -15,12 +15,10 @@ void SoundEmitterComponent::setUp() {
 	if (FIND(cfg_, "customName")) { string auxCustomName = cfg_["customName"];  customName = auxCustomName; }
 	else customName = "";
 
-	if (FIND(cfg_, "3D")) threeD = cfg_["3D"];
-	else threeD = false;
+	//if (FIND(cfg_, "3D")) threeD = cfg_["3D"];
+	//else threeD = false;
 
-	if (threeD) {
-		emitterPos = owner_->getTransPtr();
-	}
+	emitterPos = owner_->getTransPtr();
 
 	if (FIND(cfg_, "loop")) playLooped = cfg_["loop"];
 	else playLooped = true;
@@ -53,10 +51,7 @@ void SoundEmitterComponent::receive(Message * msg) {
 }
 
 void SoundEmitterComponent::playSound() {
-	if (threeD)
-		sound = SoundManager::getSingleton()->play3DSound(routeName, &emitterPos->p_, playLooped, false, customName, true);
-	else
-		sound = SoundManager::getSingleton()->play2DSound(routeName, playLooped, false, customName, true);
+	sound = SoundManager::getSingleton()->playSound(routeName, &emitterPos->p_, playLooped, false, customName, true);
 
 	setVolume(volume);
 }

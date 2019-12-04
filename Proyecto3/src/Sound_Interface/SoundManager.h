@@ -10,11 +10,8 @@ class nap_transform;
 
 namespace FMOD {
 	class System;
-}
-
-namespace irrklang {
-	class ISound;
-	class ISoundEngine;
+	class Channel;
+	class ChannelGroup;
 }
 
 // interface for irrklang (SoundManager)
@@ -24,14 +21,13 @@ private:
 	static SoundManager* instance_;                                       //singleton pattern
 	const string soundsRoute = ".\\Assets\\Sound\\";
 	int unmodifiedSounds = 0;                                             // number of sounds with no specific name
-	std::map<string, pair<irrklang::ISound*, nap_vector3*>> threeDsounds; // 3Dsounds already played, with their position
-	std::map<string, irrklang::ISound*> twoDsounds;                       // 2Dsounds already played
+	std::map<string, pair<FMOD::Channel*, nap_vector3*>> sounds; // 3Dsounds already played, with their position
+	FMOD::ChannelGroup* masterGroup;
 
-	irrklang::ISoundEngine* engine;                                       // it plays the sounds, etc
 	nap_transform* listenerTransform;                                     // the transform of the listener (player)
 
 	// FMOD
-	FMOD::System* system_;
+	FMOD::System* system;
 
 	SoundManager();
 	virtual ~SoundManager();
@@ -47,25 +43,19 @@ public:
 	void setListenerTransform(nap_transform* trans);       //ESPERAR A QUE DIEGO HAGA LA CONVERSION A VEC3
 
 	// playing 3D/2D sounds... (3D will need a pointer to the emitter position
-	irrklang::ISound* play3DSound(const string& routeName, nap_vector3* pos,
+	FMOD::Channel* playSound(const string& routeName, nap_vector3* pos,
 		bool playLooped = false, bool startPaused = false, string customName = "", bool track = false);
 
-	irrklang::ISound* play2DSound(const string& routeName,
-		bool playLooped = false, bool startPaused = false, string customName = "", bool track = false);
-
-	void stop3DSoundByName(const string& name);
-	void stop2DSoundByName(const string& name);
+	void stopSoundByName(const string& name);
 
 	bool isPlaying(const string& name);
 
-	irrklang::ISound* find3DByName(const string& name);
-	irrklang::ISound* find2DByName(const string& name);
+	FMOD::Channel* findByName(const string& name);
 	void stopSounds();
 
-	irrklang::ISoundEngine* getEngine();
+	FMOD::System* getEngine();
 	void setAllVolumes(float v);
-	void set3DVolumeByName(const string& name, float v);
-	void set2DVolumeByName(const string& name, float v);
+	void setVolumeByName(const string& name, float v);
 };
 
 #endif /* SOUND_MANAGER_H_ */

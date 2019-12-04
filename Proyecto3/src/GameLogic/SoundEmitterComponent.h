@@ -4,8 +4,8 @@
 
 #include "Component.h"
 
-namespace irrklang {
-	class ISound;
+namespace FMOD {
+	class Channel;
 }
 
 // it allows its owner to play a sound
@@ -17,13 +17,12 @@ protected:
 
 	nap_transform* emitterPos; // only if it is a 3D sound
 
-	bool threeD;
 	bool playLooped;
 	bool startPaused;
 	bool track;
 
 	float volume;
-	irrklang::ISound* sound;
+	FMOD::Channel* sound;
 
 	// some methods
 	void playSound();
