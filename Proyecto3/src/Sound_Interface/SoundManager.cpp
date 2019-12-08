@@ -1,10 +1,8 @@
 #include "SoundManager.h"
 #include <LogSystem.h>
 #include <Transforms.h>
-#include <irrKlang.h>
 #include <fmod.hpp>
 
-using namespace irrklang;
 using namespace FMOD;
 
 SoundManager* SoundManager::instance_ = nullptr;
@@ -28,17 +26,6 @@ void SoundManager::shutdownSingleton() {
 void SoundManager::update() {
 	// listener transform (position, orientation)
 	updateListener();
-
-	// 3Dsounds: updates each playing sound position and erases the stopped sounds
-	for (map<string, pair<FMOD::Channel*, nap_vector3*>>::iterator it = sounds.begin(); it != sounds.end(); it++) {
-		FMOD_VECTOR pos;
-		pos.x = it->second.second->x_;	pos.y = it->second.second->y_;	pos.z = it->second.second->z_;
-
-		FMOD_VECTOR vel;
-		vel.x = vel.y = vel.z = 0;
-
-		it->second.first->set3DAttributes(&pos, &vel);
-	}
 
 	system->update();
 }
@@ -73,56 +60,37 @@ void SoundManager::setListenerTransform(nap_transform* trans)
 	updateListener();
 }
 
+void SoundManager::load(const string& soundName, int mode)
+{
+	if (sounds.find(soundName) == sounds.end()) {
+		FMOD::Sound* sound;
+		system->createSound((soundsRoute + soundName).c_str(), mode | FMOD_LOOP_NORMAL, 0, &sound);
+		sounds.insert({ soundName, sound });
+	}
+}
+
 // it plays a 3D sound. If the track bool is true, it also returns the sound.
 // If you want to change a sound in execution, you must name it to have a later reference
-Channel* SoundManager::playSound(const string& routeName, nap_vector3* pos, bool playLooped, bool startPaused, string customName, bool track)
+Channel* SoundManager::playSound(const string& soundName, int numLoops, bool startPaused, bool track)
 {
-	Channel* channel;
-	//system->playSound(Resources::sounds(routeName), 0, startPaused, &channel);
-
-	channel->setLoopCount(playLooped);
-	//irrklang::ISound* sound3D = engine->play3D((soundsRoute + routeName).c_str(), irrklang::vec3df(pos->x_, pos->y_, pos->z_), playLooped, startPaused, true);
-
-	if (customName != "") {
-		sounds.erase(customName);
-		sounds.insert({ customName, {channel, pos} }); // you will be able to have a reference to that sound later
+	try {
+		Channel* channel;
+		system->playSound(sounds.at(soundName), 0, startPaused, &channel);
+		channel->setLoopCount(numLoops);
+		if (track) return channel;
+		else return nullptr;
 	}
-	else {
-		sounds.insert({ "__" + to_string(unmodifiedSounds), {channel, pos} });
-		unmodifiedSounds++;
+	catch (exception e) {
+		string skk = soundName;
+		std::map<string, FMOD::Sound*> soundskk = sounds;
 	}
+	return nullptr;
 
-	if (track) return channel;
-	else return nullptr;
-}
-
-void SoundManager::stopSoundByName(const string & name)
-{
-	Channel* channel = findByName(name);
-	channel->stop();
-	sounds.erase(name);
-}
-
-bool SoundManager::isPlaying(const string& name) {
-	Channel* channel = findByName(name);
-	bool playing = false;
-	channel->isPlaying(&playing);
-	return playing;
-}
-
-// it returns the 3D sound with the name specified
-Channel* SoundManager::findByName(const string& name) {
-	map<string, pair<FMOD::Channel*, nap_vector3*>>::iterator it = sounds.find(name);
-	if (it != sounds.end())
-		return it->second.first;
-	else return nullptr;
 }
 
 void SoundManager::stopSounds()
 {
 	masterGroup->stop();
-	sounds.clear();
-	unmodifiedSounds = 0;
 }
 
 FMOD::System * SoundManager::getEngine()
@@ -132,12 +100,6 @@ FMOD::System * SoundManager::getEngine()
 
 void SoundManager::setAllVolumes(float v) {
 	masterGroup->setVolume(v);
-}
-
-void SoundManager::setVolumeByName(const string& name, float v)
-{
-	auto it = sounds.find(name);
-	if (it != sounds.end())it->second.first->setVolume(v);
 }
 
 SoundManager::SoundManager(): system(nullptr)

@@ -99,9 +99,9 @@
             "group": "test_comps"
           },
           "routeName": "enemySound1.ogg",
-          "loop": true,
+          "loop": -1,
           "3D": true,
-          "volume": 1.0
+          "volume": 5.0
         }
       }
     },

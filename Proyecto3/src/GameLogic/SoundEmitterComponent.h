@@ -13,16 +13,16 @@ class SoundEmitterComponent : public Component
 {
 protected:
 	string routeName;
-	string customName;         // custom name for searching it in the sounds map (SoundManager)
 
+	bool threeD;
 	nap_transform* emitterPos; // only if it is a 3D sound
 
-	bool playLooped;
+	int numLoops;
 	bool startPaused;
 	bool track;
 
 	float volume;
-	FMOD::Channel* sound;
+	FMOD::Channel* channel;
 
 	// some methods
 	void playSound();
@@ -36,6 +36,7 @@ public:
 	inline virtual ~SoundEmitterComponent() { };
 	virtual void setUp();
 
+	virtual void update(GameObject * o, double time);
 	virtual void receive(Message * msg);
 };
 

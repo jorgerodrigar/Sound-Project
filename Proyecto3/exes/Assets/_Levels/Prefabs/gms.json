@@ -178,7 +178,6 @@
             "group": "test_comps"
           },
           "routeName": "introMusic.ogg",
-          "customName": "menuMusic",
           "3D": false,
           "volume": 0.2
         },

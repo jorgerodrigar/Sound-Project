@@ -12,6 +12,7 @@ namespace FMOD {
 	class System;
 	class Channel;
 	class ChannelGroup;
+	class Sound;
 }
 
 // interface for irrklang (SoundManager)
@@ -20,8 +21,7 @@ class SoundManager
 private:
 	static SoundManager* instance_;                                       //singleton pattern
 	const string soundsRoute = ".\\Assets\\Sound\\";
-	int unmodifiedSounds = 0;                                             // number of sounds with no specific name
-	std::map<string, pair<FMOD::Channel*, nap_vector3*>> sounds; // 3Dsounds already played, with their position
+	std::map<string, FMOD::Sound*> sounds;
 	FMOD::ChannelGroup* masterGroup;
 
 	nap_transform* listenerTransform;                                     // the transform of the listener (player)
@@ -42,20 +42,14 @@ public:
 
 	void setListenerTransform(nap_transform* trans);       //ESPERAR A QUE DIEGO HAGA LA CONVERSION A VEC3
 
-	// playing 3D/2D sounds... (3D will need a pointer to the emitter position
-	FMOD::Channel* playSound(const string& routeName, nap_vector3* pos,
-		bool playLooped = false, bool startPaused = false, string customName = "", bool track = false);
+	void load(const string& soundName, int mode);
 
-	void stopSoundByName(const string& name);
+	FMOD::Channel* playSound(const string& soundName, int numLoops = 0, bool startPaused = false, bool track = true);
 
-	bool isPlaying(const string& name);
-
-	FMOD::Channel* findByName(const string& name);
 	void stopSounds();
 
 	FMOD::System* getEngine();
 	void setAllVolumes(float v);
-	void setVolumeByName(const string& name, float v);
 };
 
 #endif /* SOUND_MANAGER_H_ */
