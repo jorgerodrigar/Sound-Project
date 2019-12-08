@@ -65,6 +65,7 @@ void SoundManager::load(const string& soundName, int mode)
 	if (sounds.find(soundName) == sounds.end()) {
 		FMOD::Sound* sound;
 		system->createSound((soundsRoute + soundName).c_str(), mode | FMOD_LOOP_NORMAL, 0, &sound);
+		sound->setMode(FMOD_INIT_3D_RIGHTHANDED);
 		sounds.insert({ soundName, sound });
 	}
 }
@@ -107,7 +108,7 @@ SoundManager::SoundManager(): system(nullptr)
 	System_Create(&system); // Creamos el objeto system
 
 	// 128 canales (numero maximo que podremos utilizar simultaneamente)
-	system->init(128, FMOD_INIT_NORMAL, 0); // Inicializacion de FMOD
+	system->init(128, FMOD_INIT_NORMAL | FMOD_INIT_3D_RIGHTHANDED, 0); // Inicializacion de FMOD
 	system->set3DSettings(1.0f, 1.0f, 1.0f); // doppler/factor de escalado de distancia/rolloff
 
 	system->getMasterChannelGroup(&masterGroup);
