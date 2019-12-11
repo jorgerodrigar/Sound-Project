@@ -2,6 +2,7 @@
 #include <LogSystem.h>
 #include <Transforms.h>
 #include <fmod.hpp>
+#include <iostream>
 
 using namespace FMOD;
 
@@ -35,7 +36,8 @@ void SoundManager::updateListener()
 	if (listenerTransform == nullptr)
 		LogSystem::Log("listenerTransform hasn´t been initialized. Call singleton->getEngine->setListener at least once", LogSystem::SOUND);
 	else {
-		nap_vector3 dir = listenerTransform->q_.toNapVec3(nap_vector3(0, 0, 1));
+		nap_vector3 dir = listenerTransform->q_.toNapVec3(nap_vector3(0, 0, -1));
+		nap_vector3 upDir = listenerTransform->q_.toNapVec3(nap_vector3(0, 1, 0));
 
 		FMOD_VECTOR pos;
 		pos.x = listenerTransform->p_.x_; pos.y = listenerTransform->p_.y_;	pos.z = listenerTransform->p_.z_;	
@@ -44,12 +46,14 @@ void SoundManager::updateListener()
 		vel.x = vel.y = vel.z = 0;
 
 		FMOD_VECTOR up;
-		up.x = 0;	up.y = 1;	up.z = 0;
+		up.x = upDir.x_;	up.y = upDir.y_;	up.z = upDir.z_;
 
 		FMOD_VECTOR at;
 		at.x = dir.x_;	at.y = dir.y_;	at.z = dir.z_;
 
-		system->set3DListenerAttributes(0, &pos, &vel, &up, &at); // PARSING NEEDED
+		std::cout << up.x << " " << up.y << " " << up.z << std::endl;
+
+		system->set3DListenerAttributes(0, &pos, &vel, &at, &up); // PARSING NEEDED
 	}
 }
 
@@ -108,7 +112,7 @@ SoundManager::SoundManager(): system(nullptr)
 	System_Create(&system); // Creamos el objeto system
 
 	// 128 canales (numero maximo que podremos utilizar simultaneamente)
-	system->init(128, FMOD_INIT_NORMAL | FMOD_INIT_3D_RIGHTHANDED, 0); // Inicializacion de FMOD
+	system->init(128, FMOD_INIT_3D_RIGHTHANDED, 0); // Inicializacion de FMOD
 	system->set3DSettings(1.0f, 1.0f, 1.0f); // doppler/factor de escalado de distancia/rolloff
 
 	system->getMasterChannelGroup(&masterGroup);
