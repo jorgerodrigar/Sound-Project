@@ -15,7 +15,7 @@ protected:
 	string routeName;
 
 	bool threeD;
-	nap_transform* emitterPos; // only if it is a 3D sound
+	nap_transform* emitterTrans; // only if it is a 3D sound
 
 	int numLoops;
 	bool startPaused;
@@ -25,9 +25,9 @@ protected:
 	FMOD::Channel* channel;
 
 	// some methods
-	void playSound();
-	void stopSound();
-	void setVolume(float v);
+	virtual void playSound();
+	virtual void stopSound();
+	virtual void setVolume(float v);
 
 	virtual void configActive();
 
@@ -35,6 +35,7 @@ public:
 	inline SoundEmitterComponent(nap_json const & cfg, GameObject* owner) : Component(cfg, owner) {};
 	inline virtual ~SoundEmitterComponent() { };
 	virtual void setUp();
+	virtual void lateSetUp();
 
 	virtual void update(GameObject * o, double time);
 	virtual void receive(Message * msg);

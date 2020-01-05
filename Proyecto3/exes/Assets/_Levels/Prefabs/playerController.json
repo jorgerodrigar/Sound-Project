@@ -227,7 +227,7 @@
         "group": "sound_comp"
       },
       "routeName": "bShoot.wav",
-      "loop": false,
+      "loop": 0,
       "3D": true,
       "volume": 0.1
     },
@@ -237,7 +237,7 @@
         "group": "sound_comp"
       },
       "routeName": "pShoot.wav",
-      "loop": false,
+      "loop": 0,
       "3D": true,
       "volume": 0.2
     },
@@ -247,7 +247,7 @@
         "group": "sound_comp"
       },
       "routeName": "sShoot.wav",
-      "loop": false,
+      "loop": 0,
       "3D": true,
       "volume": 0.2
     },
@@ -257,7 +257,7 @@
         "group": "sound_comp"
       },
       "routeName": "Upgrade.wav",
-      "loop": false,
+      "loop": 0,
       "3D": true,
       "volume": 0.5
     },
@@ -269,7 +269,7 @@
       "routeName": "hurtSound.ogg",
       "3D": true,
       "startPaused": true,
-      "loop": false,
+      "loop": 0,
       "volume": 1.0
     }
   }

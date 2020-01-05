@@ -17,7 +17,7 @@ void SoundEmitterComponent::setUp() {
 	if (FIND(cfg_, "3D")) threeD = cfg_["3D"];
 	else threeD = false;
 
-	emitterPos = owner_->getTransPtr();
+	emitterTrans = owner_->getTransPtr();
 
 	if (FIND(cfg_, "loop")) numLoops = cfg_["loop"];
 	else numLoops = 0;
@@ -26,11 +26,13 @@ void SoundEmitterComponent::setUp() {
 	else startPaused = false;
 
 	if (FIND(cfg_, "volume")) volume = cfg_["volume"];
-	else volume = 1;
+	else volume = 1;	
+}
 
+void SoundEmitterComponent::lateSetUp()
+{
 	int mode = FMOD_2D;
 	if (threeD)mode = FMOD_3D;
-
 	SoundManager::getSingleton()->load(routeName, mode);
 }
 
@@ -43,14 +45,16 @@ void SoundEmitterComponent::configActive() {
 }
 
 void SoundEmitterComponent::update(GameObject * o, double time) {
-	bool playing;
-	channel->isPlaying(&playing);
-	if (channel != nullptr && threeD && playing) {
-		FMOD_VECTOR pos;
-		pos.x = emitterPos->p_.x_; pos.y = emitterPos->p_.y_;	pos.z = emitterPos->p_.z_;
-		FMOD_VECTOR vel;
-		vel.x = vel.y = vel.z = 0;
-		channel->set3DAttributes(&pos, &vel);
+	if (active_) {
+		bool playing;
+		channel->isPlaying(&playing);
+		if (channel != nullptr && threeD && playing) {
+			FMOD_VECTOR pos;
+			pos.x = emitterTrans->p_.x_; pos.y = emitterTrans->p_.y_;	pos.z = emitterTrans->p_.z_;
+			FMOD_VECTOR vel;
+			vel.x = vel.y = vel.z = 0;
+			channel->set3DAttributes(&pos, &vel);
+		}
 	}
 }
 
@@ -67,9 +71,11 @@ void SoundEmitterComponent::receive(Message * msg) {
 }
 
 void SoundEmitterComponent::playSound() {
-	channel = SoundManager::getSingleton()->playSound(routeName, numLoops, false, true);
+	if (active_) {
+		channel = SoundManager::getSingleton()->playSound(routeName, numLoops, false, true);
 
-	setVolume(volume);
+		setVolume(volume);
+	}
 }
 
 void SoundEmitterComponent::stopSound() {

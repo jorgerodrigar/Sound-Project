@@ -65,7 +65,7 @@
           "3D": false,
           "volume": 0.1,
           "startPaused": true,
-          "loop": false
+          "loop": 0
         },
         "deathMarkerSound": {
           "id": {
@@ -77,7 +77,7 @@
           "3D": false,
           "volume": 0.1,
           "startPaused": true,
-          "loop": false
+          "loop": 0
         },
         "handle_input": {
           "id": {
@@ -227,7 +227,7 @@
           },
           "routeName": "deathMusic.ogg",
           "customName": "deathMusic",
-          "loop": false,
+          "loop": 0,
           "3D": false,
           "volume": 0.2
         },
@@ -238,7 +238,7 @@
           },
           "routeName": "deathSound.ogg",
           "3D": false,
-          "loop":false,
+          "loop":0,
           "volume": 0.7
         },
         "pop_state": {

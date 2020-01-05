@@ -51,7 +51,7 @@
                     "group": "sound_comp"
                   },
                   "routeName": "hoverButton.ogg",
-                  "loop": false,
+                  "loop": 0,
                   "startPaused":true,
                   "3D": false,
                   "volume": 1.0

@@ -167,14 +167,14 @@
         },
         "portalSound": {
           "id": {
-            "type": "SoundEmitterComponent",
+            "type": "DirectionalSoundComponent",
             "group": "test_comps"
           },
           "routeName": "portalSound.ogg",
-          "3D": true,
           "volume": 1.0,
-          "startPaused": true,
-          "loop": true
+          "outsideVolume":0.5,
+          "startPaused": false,
+          "loop": -1
         }
       }
     },

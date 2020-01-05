@@ -95,12 +95,11 @@
         },
         "soundEffect": {
           "id": {
-            "type": "SoundEmitterComponent",
+            "type": "DirectionalSoundComponent",
             "group": "test_comps"
           },
-          "routeName": "enemySound1.ogg",
+          "routeName": "enemySound1equalized.ogg",
           "loop": -1,
-          "3D": true,
           "volume": 5.0
         }
       }
@@ -205,13 +204,31 @@
         },
         "bombardierSound": {
           "id": {
+            "type": "DirectionalSoundComponent",
+            "group": "sound_comp"
+          },
+          "routeName": "ufo.wav",
+          "loop": -1,
+          "volume": 2.0,
+          "insideConeAngle":40,
+          "outsideConeAngle":90,
+          "outsideVolume":0.5,
+          "useOwnerDirection": false,
+          "selfDirection": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          }
+        },
+        "bombardierShot": {
+          "id": {
             "type": "SoundEmitterComponent",
             "group": "sound_comp"
           },
           "routeName": "BombardierShoot.ogg",
-          "loop": false,
+          "loop": 0,
           "3D": false,
-          "volume": 0.3
+          "volume": 0.2
         }
       }
     },
@@ -269,7 +286,7 @@
             "group": "sound_comp"
           },
           "routeName": "SniperShoot.ogg",
-          "loop": false,
+          "loop": 0,
           "3D": false,
           "volume": 0.5
         },
@@ -520,7 +537,7 @@
             "group": "sound_comp"
           },
           "routeName": "StomperShoot.ogg",
-          "loop": false,
+          "loop": 0,
           "3D": false,
           "volume": 0.3
         }
