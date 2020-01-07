@@ -173,7 +173,7 @@
           "routeName": "portalSound.ogg",
           "volume": 1.0,
           "outsideVolume":0.5,
-          "startPaused": false,
+          "startPaused": true,
           "loop": -1
         }
       }

@@ -39,3 +39,10 @@ nap_vector3 nap_quat::toNapVec3(nap_vector3 direction) {
 physx::PxExtendedVec3 nap_vector3::pxEx() {
 	return physx::PxExtendedVec3(x_, y_, z_);
 }
+
+#include <fmod.hpp>
+FMOD_VECTOR nap_vector3::fmod()
+{
+	FMOD_VECTOR fmodVec; fmodVec.x = x_; fmodVec.y = y_; fmodVec.z = z_;
+	return fmodVec;
+}

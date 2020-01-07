@@ -17,6 +17,8 @@ namespace physx
 	class PxQuat;
 }
 
+class FMOD_VECTOR;
+
 //parse jsons
 #include "JsonCore.h"
 
@@ -43,6 +45,7 @@ public:
 	Ogre::Vector3 ogre();
 	physx::PxVec3 px();
 	physx::PxExtendedVec3 pxEx();
+	FMOD_VECTOR fmod();
 	nap_json json() { //could be used for easy debug
 		return nap_json({ {"x", x_}, {"y", y_}, {"z", z_} });
 	};

@@ -8,14 +8,14 @@
       "type": "pref_playerController"
     }
   },
-  "Manager":{
+  "Manager": {
     "id": {
       "type": "pref_gm_go"
     },
-    "Components":{
-        "LevelMusic": {
-          "routeName": "lavaMusic.ogg"
-        }
+    "Components": {
+      "LevelMusic": {
+        "routeName": "lavaMusic.ogg"
+      }
     }
   },
   "GameObjects": [
@@ -49,7 +49,6 @@
         "z": 0.0
       }
     },
-
     {
       "id": {
         "type": "pref_Enemyspawner"
@@ -102,13 +101,11 @@
         "z": 0.5
       }
     },
-
     {
       "id": {
         "type": "ambient_light"
       }
     },
-
     {
       "id": {
         "type": "skybox"
@@ -137,16 +134,36 @@
           "d": 200,
           "target": "player"
         },
-        "TickDmg":{
+        "TickDmg": {
           "id": {
             "type": "DamageTickComponent",
             "group": "trigger_comps"
           },
           "timer": 0.5,
           "dmg": 7.5,
-          "enterId":12,
+          "enterId": 12,
           "exitId": 13,
           "target": "player"
+        },
+        "Reverb":{
+          "id": {
+            "type": "ReverbComponent",
+            "group": "sound_comps"
+          },
+          "activateId": 12,
+          "deactivateId": 13,
+          "decayTime":10000,
+          "earlyDelay":70,
+          "lateDelay":110,
+          "hfReference":5000,
+          "hfDecayRatio":10,
+          "diffusion":100,
+          "density":100,
+          "lowShelfFrequency":250,
+          "lowShelfGain":0,
+          "highCut":500,
+          "earlyLateMix":92,
+          "wetLevel":15
         }
       }
     },

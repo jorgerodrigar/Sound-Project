@@ -193,6 +193,33 @@
           }
         }
       }
+    },
+    {
+      "id": {
+        "name": "water_reverb",
+        "type": "water_reverb",
+        "group": "reverbs"
+      },
+      "Components": {
+        "reverbComp": {
+          "id": {
+            "type": "ReverbComponent",
+            "group": "sound_comps"
+          },
+          "decayTime":10000,
+          "earlyDelay":70,
+          "lateDelay":110,
+          "hfReference":5000,
+          "hfDecayRatio":10,
+          "diffusion":100,
+          "density":100,
+          "lowShelfFrequency":250,
+          "lowShelfGain":0,
+          "highCut":500,
+          "earlyLateMix":92,
+          "wetLevel":15
+        }
+      }
     }
   ]
 }

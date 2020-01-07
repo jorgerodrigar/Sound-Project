@@ -210,6 +210,7 @@
           "routeName": "ufo.wav",
           "loop": -1,
           "volume": 2.0,
+          "startPaused":true,
           "insideConeAngle":40,
           "outsideConeAngle":90,
           "outsideVolume":0.5,

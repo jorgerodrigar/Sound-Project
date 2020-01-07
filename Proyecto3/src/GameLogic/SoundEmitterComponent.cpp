@@ -49,11 +49,9 @@ void SoundEmitterComponent::update(GameObject * o, double time) {
 		bool playing;
 		channel->isPlaying(&playing);
 		if (channel != nullptr && threeD && playing) {
-			FMOD_VECTOR pos;
-			pos.x = emitterTrans->p_.x_; pos.y = emitterTrans->p_.y_;	pos.z = emitterTrans->p_.z_;
 			FMOD_VECTOR vel;
 			vel.x = vel.y = vel.z = 0;
-			channel->set3DAttributes(&pos, &vel);
+			channel->set3DAttributes(&emitterTrans->p_.fmod(), &vel);
 		}
 	}
 }

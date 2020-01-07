@@ -39,21 +39,10 @@ void SoundManager::updateListener()
 		nap_vector3 dir = listenerTransform->q_.toNapVec3(nap_vector3(0, 0, -1));
 		nap_vector3 upDir = listenerTransform->q_.toNapVec3(nap_vector3(0, 1, 0));
 
-		FMOD_VECTOR pos;
-		pos.x = listenerTransform->p_.x_; pos.y = listenerTransform->p_.y_;	pos.z = listenerTransform->p_.z_;	
-
 		FMOD_VECTOR vel;
 		vel.x = vel.y = vel.z = 0;
 
-		FMOD_VECTOR up;
-		up.x = upDir.x_;	up.y = upDir.y_;	up.z = upDir.z_;
-
-		FMOD_VECTOR at;
-		at.x = dir.x_;	at.y = dir.y_;	at.z = dir.z_;
-
-		std::cout << up.x << " " << up.y << " " << up.z << std::endl;
-
-		system->set3DListenerAttributes(0, &pos, &vel, &at, &up); // PARSING NEEDED
+		system->set3DListenerAttributes(0, &listenerTransform->p_.fmod(), &vel, &dir.fmod(), &upDir.fmod()); // PARSING NEEDED
 	}
 }
 

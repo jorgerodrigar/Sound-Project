@@ -212,6 +212,9 @@
     <ClCompile Include="..\..\src\GameLogic\DirectionalSoundComponent.cpp">
       <Filter>Sound</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\ReverbComponent.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\GameLogic\PhysicsComponent.h">
@@ -399,6 +402,9 @@
       <Filter>Enemy</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\GameLogic\DirectionalSoundComponent.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\ReverbComponent.h">
       <Filter>Sound</Filter>
     </ClInclude>
   </ItemGroup>

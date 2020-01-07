@@ -64,6 +64,7 @@
     <ClCompile Include="..\..\src\GameLogic\Pool.cpp" />
     <ClCompile Include="..\..\src\GameLogic\QuitGameComponent.cpp" />
     <ClCompile Include="..\..\src\GameLogic\RenderComponent.cpp" />
+    <ClCompile Include="..\..\src\GameLogic\ReverbComponent.cpp" />
     <ClCompile Include="..\..\src\GameLogic\ShowLeaderBoardComponent.cpp" />
     <ClCompile Include="..\..\src\GameLogic\SinusoidalMovement.cpp" />
     <ClCompile Include="..\..\src\GameLogic\SkyBoxComponent.cpp" />
@@ -129,6 +130,7 @@
     <ClInclude Include="..\..\src\GameLogic\Pool.h" />
     <ClInclude Include="..\..\src\GameLogic\QuitGameComponent.h" />
     <ClInclude Include="..\..\src\GameLogic\RenderComponent.h" />
+    <ClInclude Include="..\..\src\GameLogic\ReverbComponent.h" />
     <ClInclude Include="..\..\src\GameLogic\ShowLeaderBoardComponent.h" />
     <ClInclude Include="..\..\src\GameLogic\SinusoidalMovement.h" />
     <ClInclude Include="..\..\src\GameLogic\SkyBoxComponent.h" />

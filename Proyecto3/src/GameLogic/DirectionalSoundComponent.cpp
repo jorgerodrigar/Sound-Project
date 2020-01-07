@@ -40,20 +40,17 @@ void DirectionalSoundComponent::update(GameObject * o, double time)
 		bool playing;
 		channel->isPlaying(&playing);
 		if (channel != nullptr && threeD && playing) {
-			FMOD_VECTOR pos;
-			pos.x = emitterTrans->p_.x_; pos.y = emitterTrans->p_.y_;	pos.z = emitterTrans->p_.z_;
 			FMOD_VECTOR vel;
 			vel.x = vel.y = vel.z = 0;
-			channel->set3DAttributes(&pos, &vel);
-			FMOD_VECTOR dir;
-			if (useOwnerDirection) {
-				nap_vector3 aux = emitterTrans->q_.toNapVec3(nap_vector3(0, 0, 1));
-				dir.x = aux.x_; dir.y = aux.y_;	dir.z = aux.z_;
-			}
-			else {
-				dir.x = selfDirection.x_; dir.y = selfDirection.y_;	dir.z = selfDirection.z_;
-			}
-			channel->set3DConeOrientation(&dir);
+			channel->set3DAttributes(&emitterTrans->p_.fmod(), &vel);
+
+			nap_vector3 dir;
+			if (useOwnerDirection)
+				dir = emitterTrans->q_.toNapVec3(nap_vector3(0, 0, 1));
+			else
+				dir = selfDirection;
+
+			channel->set3DConeOrientation(&dir.fmod());
 		}
 	}
 }
