@@ -29,7 +29,7 @@
     <ProjectGuid>{A31FAB00-C6D4-4D50-8A72-EC9DC428E503}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SoundInterface</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
