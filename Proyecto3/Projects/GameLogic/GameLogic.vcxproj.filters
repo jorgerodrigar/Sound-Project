@@ -215,6 +215,9 @@
     <ClCompile Include="..\..\src\GameLogic\ReverbComponent.cpp">
       <Filter>Sound</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\GameLogic\GeometryComponent.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\GameLogic\PhysicsComponent.h">
@@ -405,6 +408,9 @@
       <Filter>Sound</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\GameLogic\ReverbComponent.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\GeometryComponent.h">
       <Filter>Sound</Filter>
     </ClInclude>
   </ItemGroup>

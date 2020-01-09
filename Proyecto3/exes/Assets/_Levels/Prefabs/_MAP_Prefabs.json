@@ -105,7 +105,47 @@
                     "type": "MESH",
                     "mesh": "cube.mesh"
                 }
-            }
+            },
+            "geometryComp": {
+                "id": {
+                  "type": "GeometryComponent",
+                  "group": "sound_comps"
+                },
+                "vertices": [
+                  {
+                    "x": -12,
+                    "y": 0,
+                    "z": 0
+                  },
+                  {
+                    "x": 12,
+                    "y": 0,
+                    "z": 0
+                  },
+                  {
+                    "x": 12,
+                    "y": 200,
+                    "z": 0
+                  },
+                  {
+                    "x": -12,
+                    "y": 200,
+                    "z": 0
+                  },
+                  {
+                    "x": -12,
+                    "y": 0,
+                    "z": 0
+                  }
+                ],
+                "orientation":{
+                    "x":0,
+                    "y":0,
+                    "z":1
+                },
+                "occulsion": 0.9,
+                "reverbOcclusion": 0.9
+              }
         }
     },
     {

@@ -206,18 +206,118 @@
             "type": "ReverbComponent",
             "group": "sound_comps"
           },
-          "decayTime":10000,
-          "earlyDelay":70,
-          "lateDelay":110,
-          "hfReference":5000,
-          "hfDecayRatio":10,
-          "diffusion":100,
-          "density":100,
-          "lowShelfFrequency":250,
-          "lowShelfGain":0,
-          "highCut":500,
-          "earlyLateMix":92,
-          "wetLevel":15
+          "decayTime": 10000,
+          "earlyDelay": 70,
+          "lateDelay": 110,
+          "hfReference": 5000,
+          "hfDecayRatio": 10,
+          "diffusion": 100,
+          "density": 100,
+          "lowShelfFrequency": 250,
+          "lowShelfGain": 0,
+          "highCut": 500,
+          "earlyLateMix": 92,
+          "wetLevel": 15
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "soundDebug",
+        "type": "soundDebug",
+        "group": "soundDebug"
+      },
+      "pos": {
+        "x": 20.0,
+        "y": 0.0,
+        "z": 20.0
+      },
+      "ori": {
+        "w": 0.707,
+        "x": 0.707,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Components": {
+        "geometryComp": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "sound_comps"
+          },
+          "routeName": "enemySound1equalized.ogg",
+          "loop": -1,
+          "volume": 5.0,
+          "3D": true
+        },
+        "up_render": {
+          "id": {
+            "type": "RenderComponent"
+          },
+          "scale": {
+            "x": 4,
+            "y": 4,
+            "z": 4
+          },
+          "material": "DebugMaterial2",
+          "shape": {
+            "entity_name": "pref_upgrade",
+            "type": "MESH",
+            "mesh": "cube.mesh"
+          }
+        }
+      }
+    },
+    {
+      "id": {
+        "name": "geometry",
+        "type": "geometry",
+        "group": "soundDebug"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": -20.0,
+        "z": 0.0
+      },
+      "Components": {
+        "geometryComp": {
+          "id": {
+            "type": "GeometryComponent",
+            "group": "sound_comps"
+          },
+          "vertices": [
+            {
+              "x": -1000,
+              "y": 0,
+              "z": 0
+            },
+            {
+              "x": 1000,
+              "y": 0,
+              "z": 0
+            },
+            {
+              "x": 1000,
+              "y": 200,
+              "z": 0
+            },
+            {
+              "x": -1000,
+              "y": 200,
+              "z": 0
+            },
+            {
+              "x": -1000,
+              "y": 0,
+              "z": 0
+            }
+          ],
+          "orientation":{
+              "x":0,
+              "y":0,
+              "z":1
+          },
+          "occulsion": 1.0,
+          "reverbOcclusion": 1.0
         }
       }
     }
