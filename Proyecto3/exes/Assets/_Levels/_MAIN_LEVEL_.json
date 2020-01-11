@@ -6,6 +6,11 @@
     "id": {
       "name": "player",
       "type": "pref_playerController"
+    },
+    "pos": {
+      "x": 0.0,
+      "y": 5.0,
+      "z": -45.0
     }
   },
   "Manager": {
@@ -14,7 +19,7 @@
     },
     "Components": {
       "LevelMusic": {
-        "routeName": "lavaMusic.ogg"
+        "routeName": "kk.ogg"
       }
     }
   },
@@ -144,6 +149,17 @@
           "enterId": 12,
           "exitId": 13,
           "target": "player"
+        },
+        "ambientSound": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "sound_comp"
+          },
+          "routeName": "underWater.wav",
+          "loop": -1,
+          "3D": false,
+          "startPaused": true,
+          "volume": 0.7
         },
         "Reverb":{
           "id": {

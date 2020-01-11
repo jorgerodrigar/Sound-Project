@@ -27,19 +27,23 @@ void DirectionalSoundComponent::setUp()
 void DirectionalSoundComponent::playSound()
 {
 	if (active_) {
-		SoundEmitterComponent::playSound();
+		bool playing = false;
+		if(channel != nullptr) channel->isPlaying(&playing);
+		if (!playing) {
+			SoundEmitterComponent::playSound();
 
-		channel->set3DConeSettings(insideConeAngle, outsideConeAngle, outsideVolume);
-		channel->set3DMinMaxDistance(minDistance, maxDistance);
+			channel->set3DConeSettings(insideConeAngle, outsideConeAngle, outsideVolume);
+			channel->set3DMinMaxDistance(minDistance, maxDistance);
+		}
 	}
 }
 
 void DirectionalSoundComponent::update(GameObject * o, double time)
 {
-	if (active_) {
+	if (active_ && channel != nullptr) {
 		bool playing;
 		channel->isPlaying(&playing);
-		if (channel != nullptr && threeD && playing) {
+		if (threeD && playing) {
 			FMOD_VECTOR vel;
 			vel.x = vel.y = vel.z = 0;
 			channel->set3DAttributes(&emitterTrans->p_.fmod(), &vel);
@@ -53,6 +57,10 @@ void DirectionalSoundComponent::update(GameObject * o, double time)
 			channel->set3DConeOrientation(&dir.fmod());
 		}
 	}
+}
+
+void DirectionalSoundComponent::receive(Message * msg)
+{
 }
 
 #include "GOFactory.h"

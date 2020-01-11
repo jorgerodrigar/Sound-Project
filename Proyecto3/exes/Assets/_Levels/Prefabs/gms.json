@@ -239,7 +239,7 @@
           "routeName": "deathSound.ogg",
           "3D": false,
           "loop":0,
-          "volume": 0.7
+          "volume": 0.4
         },
         "pop_state": {
           "id": {

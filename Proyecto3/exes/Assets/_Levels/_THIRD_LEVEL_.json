@@ -7,7 +7,11 @@
       "name": "player",
       "type": "pref_playerController"
     },
-    "pos": { "x": 70.0, "y": 5.0, "z": -5.0 },
+    "pos": {
+      "x": 70.0,
+      "y": 5.0,
+      "z": -5.0
+    },
     "Components": {
       "lavaPostProcessing": {
         "id": {
@@ -18,6 +22,9 @@
         "EnabledOnStart": false,
         "Active_Message": 12,
         "Inactive_Message": 13
+      },
+      "ChangePlayerGravityComponent":{
+        "Custom_Gravity": {"x": 0.0, "y": -20, "z": 0.0 }
       }
     }
   },
@@ -25,10 +32,41 @@
     "id": {
       "type": "pref_gm_go"
     },
-    "Components":{
-        "LevelMusic": {
-          "routeName": "holyMusic.ogg"
-        }
+    "Components": {
+      "LevelMusic": {
+        "routeName": "holyMusic.ogg"
+      },
+      "ambientSound": {
+        "id": {
+          "type": "SoundEmitterComponent",
+          "group": "sound_comp"
+        },
+        "routeName": "freeFall.wav",
+        "loop": -1,
+        "3D": false,
+        "startPaused": true,
+        "volume": 0.7
+      },
+      "Reverb": {
+        "id": {
+          "type": "ReverbComponent",
+          "group": "sound_comps"
+        },
+        "activateId": 12,
+        "deactivateId": 13,
+        "decayTime": 10000,
+        "earlyDelay": 70,
+        "lateDelay": 110,
+        "hfReference": 5000,
+        "hfDecayRatio": 10,
+        "diffusion": 100,
+        "density": 100,
+        "lowShelfFrequency": 250,
+        "lowShelfGain": 0,
+        "highCut": 500,
+        "earlyLateMix": 92,
+        "wetLevel": 15
+      }
     }
   },
   "GameObjects": [
@@ -180,6 +218,11 @@
         "x": 0.0,
         "y": -300.0,
         "z": 0.0
+      }
+    },
+    {
+      "id": {
+        "type": "PlaneAir"
       }
     },
     {

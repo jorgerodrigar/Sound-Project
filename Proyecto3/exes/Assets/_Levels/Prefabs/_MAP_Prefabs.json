@@ -79,7 +79,7 @@
         "id": {
             "name": "pref_BigTile",
             "type": "BigTile",
-            "group": "map"
+            "group": "wall"
         },
         "Components": {
             "tile_phys": {
@@ -98,7 +98,7 @@
                     "type": "RenderComponent",
 					"group": "map_comps"
 				},
-                "scale": { "x": 35.0, "y": 1.0, "z": 35.0 },
+                "scale": { "x": 35.0, "y":1.0, "z": 35.0 },
                 "material": "SimpleTile",
                 "shape": {
                     "entity_name": "bigTile",
@@ -143,8 +143,8 @@
                     "y":0,
                     "z":1
                 },
-                "occulsion": 0.9,
-                "reverbOcclusion": 0.9
+                "occulsion": 0.7,
+                "reverbOcclusion": 0.7
               }
         }
     },

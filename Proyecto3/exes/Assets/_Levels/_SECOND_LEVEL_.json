@@ -210,6 +210,37 @@
         },
         "basic_ren": {
           "material": "Water"
+        },
+        "ambientSound": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "sound_comp"
+          },
+          "routeName": "underWater.wav",
+          "loop": -1,
+          "3D": false,
+          "startPaused": true,
+          "volume": 0.7
+        },
+        "Reverb":{
+          "id": {
+            "type": "ReverbComponent",
+            "group": "sound_comps"
+          },
+          "activateId": 12,
+          "deactivateId": 13,
+          "decayTime":10000,
+          "earlyDelay":70,
+          "lateDelay":110,
+          "hfReference":5000,
+          "hfDecayRatio":10,
+          "diffusion":100,
+          "density":100,
+          "lowShelfFrequency":250,
+          "lowShelfGain":0,
+          "highCut":500,
+          "earlyLateMix":92,
+          "wetLevel":15
         }
       }
     },

@@ -69,6 +69,73 @@
     },
     {
       "id": {
+        "type": "PlaneAir"
+      },
+      "pos": {
+        "x": 0.0,
+        "y": -6.0,
+        "z": 0.0
+      },
+      "Components": {
+        "triggeraxis": {
+          "id": {
+            "type": "BoxTriggerComponent",
+            "group": "trigger_comps"
+          },
+          "x": -100,
+          "y": -6.0,
+          "z": -100,
+          "w": 200,
+          "h": -3000,
+          "d": 200,
+          "target": "player"
+        },
+        "TickDmg": {
+          "id": {
+            "type": "DamageTickComponent",
+            "group": "trigger_comps"
+          },
+          "timer": 2,
+          "dmg": 0,
+          "enterId": 12,
+          "exitId": 13,
+          "target": "player"
+        },
+        "ambientSound": {
+          "id": {
+            "type": "SoundEmitterComponent",
+            "group": "sound_comp"
+          },
+          "routeName": "freeFall.wav",
+          "loop": -1,
+          "3D": false,
+          "startPaused": true,
+          "volume": 0.4
+        },
+        "Reverb":{
+          "id": {
+            "type": "ReverbComponent",
+            "group": "sound_comps"
+          },
+          "activateId": 12,
+          "deactivateId": 13,
+          "decayTime":10000,
+          "earlyDelay":70,
+          "lateDelay":110,
+          "hfReference":5000,
+          "hfDecayRatio":10,
+          "diffusion":100,
+          "density":100,
+          "lowShelfFrequency":250,
+          "lowShelfGain":0,
+          "highCut":500,
+          "earlyLateMix":92,
+          "wetLevel":15
+        }
+      }
+    },
+    {
+      "id": {
         "name": "DeathPlane",
         "type": "DeathPlane",
         "group": "bounds"
@@ -228,9 +295,9 @@
         "group": "soundDebug"
       },
       "pos": {
-        "x": 20.0,
+        "x": 0.0,
         "y": 0.0,
-        "z": 20.0
+        "z": 3.0
       },
       "ori": {
         "w": 0.707,

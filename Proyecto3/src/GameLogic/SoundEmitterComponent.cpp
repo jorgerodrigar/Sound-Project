@@ -27,6 +27,8 @@ void SoundEmitterComponent::setUp() {
 
 	if (FIND(cfg_, "volume")) volume = cfg_["volume"];
 	else volume = 1;	
+
+	channel = nullptr;
 }
 
 void SoundEmitterComponent::lateSetUp()
@@ -66,6 +68,7 @@ void SoundEmitterComponent::receive(Message * msg) {
 	else if (msg->id_ == STOP_SOUND) {
 		stopSound();
 	}
+
 }
 
 void SoundEmitterComponent::playSound() {

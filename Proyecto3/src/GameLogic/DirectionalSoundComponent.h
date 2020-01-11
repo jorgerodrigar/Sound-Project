@@ -27,6 +27,7 @@ public:
 	virtual void setUp();
 
 	virtual void update(GameObject * o, double time);
+	virtual void receive(Message * msg);
 };
 
 #endif /* DIRECTIONAL__SOUND__COMP_H_ */

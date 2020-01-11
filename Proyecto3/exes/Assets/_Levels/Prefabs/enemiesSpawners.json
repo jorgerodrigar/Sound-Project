@@ -171,9 +171,9 @@
             "group": "test_comps"
           },
           "routeName": "portalSound.ogg",
-          "volume": 1.0,
-          "outsideVolume":0.5,
-          "startPaused": true,
+          "volume": 0.8,
+          "outsideVolume":0.1,
+          "startPaused": false,
           "loop": -1
         }
       }
